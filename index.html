@@ -10,45 +10,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #f6f7fb;
-    --bg-elev: #ffffff;
-    --bg-soft: #eef1f8;
-    --text: #1a1d29;
-    --text-soft: #5b6070;
-    --text-faint: #8b90a0;
-    --border: #e4e7f0;
-    --border-soft: #eef0f6;
-    --accent: #5b5bd6;
-    --accent-soft: #ececfb;
-    --accent-text: #4a4ac4;
-    --green: #1aa672;
-    --green-soft: #e3f7ef;
-    --amber: #d98a00;
-    --amber-soft: #fbf0d8;
-    --red: #d9534f;
+    --bg: #f6f7fb; --bg-elev: #ffffff; --bg-soft: #eef1f8;
+    --text: #1a1d29; --text-soft: #5b6070; --text-faint: #8b90a0;
+    --border: #e4e7f0; --border-soft: #eef0f6;
+    --accent: #5b5bd6; --accent-soft: #ececfb; --accent-text: #4a4ac4;
+    --green: #1aa672; --green-soft: #e3f7ef;
+    --amber: #d98a00; --amber-soft: #fbf0d8; --red: #d9534f;
     --shadow: 0 1px 2px rgba(20,22,40,.04), 0 4px 16px rgba(20,22,40,.05);
     --shadow-lg: 0 8px 40px rgba(20,22,40,.12);
-    --radius: 14px;
-    --radius-sm: 9px;
-    --maxw: 1080px;
+    --radius: 14px; --radius-sm: 9px; --maxw: 1080px;
   }
   html[data-theme="dark"] {
-    --bg: #0f1117;
-    --bg-elev: #181b24;
-    --bg-soft: #1f2330;
-    --text: #eceef5;
-    --text-soft: #a4a9ba;
-    --text-faint: #6f7488;
-    --border: #272c3a;
-    --border-soft: #20242f;
-    --accent: #8b8bff;
-    --accent-soft: #23233a;
-    --accent-text: #aaaaff;
-    --green: #3fcf8e;
-    --green-soft: #16302a;
-    --amber: #e6a93c;
-    --amber-soft: #322a16;
-    --red: #f0716d;
+    --bg: #0f1117; --bg-elev: #181b24; --bg-soft: #1f2330;
+    --text: #eceef5; --text-soft: #a4a9ba; --text-faint: #6f7488;
+    --border: #272c3a; --border-soft: #20242f;
+    --accent: #8b8bff; --accent-soft: #23233a; --accent-text: #aaaaff;
+    --green: #3fcf8e; --green-soft: #16302a;
+    --amber: #e6a93c; --amber-soft: #322a16; --red: #f0716d;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.35);
     --shadow-lg: 0 8px 40px rgba(0,0,0,.5);
   }
@@ -56,83 +34,49 @@
   html, body { margin: 0; padding: 0; }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    transition: background .25s ease, color .25s ease;
+    background: var(--bg); color: var(--text); line-height: 1.5;
+    -webkit-font-smoothing: antialiased; transition: background .25s ease, color .25s ease;
   }
   a { color: var(--accent-text); text-decoration: none; }
   a:hover { text-decoration: underline; }
   button { font-family: inherit; cursor: pointer; }
 
-  /* ---------- Header ---------- */
   header.app {
     position: sticky; top: 0; z-index: 40;
     background: color-mix(in srgb, var(--bg-elev) 88%, transparent);
-    backdrop-filter: saturate(160%) blur(12px);
-    border-bottom: 1px solid var(--border);
+    backdrop-filter: saturate(160%) blur(12px); border-bottom: 1px solid var(--border);
   }
-  .header-inner {
-    max-width: var(--maxw); margin: 0 auto; padding: 14px 22px;
-    display: flex; align-items: center; gap: 16px;
-  }
+  .header-inner { max-width: var(--maxw); margin: 0 auto; padding: 14px 22px; display: flex; align-items: center; gap: 16px; }
   .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 19px; letter-spacing: -.02em; }
-  .brand .logo {
-    width: 30px; height: 30px; border-radius: 9px;
-    background: linear-gradient(135deg, var(--accent), #8e7bff);
-    display: grid; place-items: center; color: #fff; font-size: 16px; box-shadow: 0 2px 10px rgba(91,91,214,.4);
-  }
+  .brand .logo { width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(135deg, var(--accent), #8e7bff); display: grid; place-items: center; color: #fff; font-size: 16px; box-shadow: 0 2px 10px rgba(91,91,214,.4); }
   .brand small { font-weight: 500; color: var(--text-faint); font-size: 12px; margin-left: 2px; }
   .header-spacer { flex: 1; }
-  .icon-btn {
-    border: 1px solid var(--border); background: var(--bg-elev); color: var(--text-soft);
-    width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
-    font-size: 16px; transition: all .15s ease;
-  }
+  .icon-btn { border: 1px solid var(--border); background: var(--bg-elev); color: var(--text-soft); width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; font-size: 16px; transition: all .15s ease; }
   .icon-btn:hover { border-color: var(--accent); color: var(--accent-text); transform: translateY(-1px); }
-  .notif-btn {
-    border: 1px solid var(--border); background: var(--bg-elev); color: var(--text-soft);
-    height: 38px; padding: 0 14px; border-radius: 10px; font-weight: 600; font-size: 13px;
-    display: flex; align-items: center; gap: 7px; transition: all .15s ease;
-  }
+  .notif-btn { border: 1px solid var(--border); background: var(--bg-elev); color: var(--text-soft); height: 38px; padding: 0 14px; border-radius: 10px; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 7px; transition: all .15s ease; }
   .notif-btn:hover { border-color: var(--accent); color: var(--accent-text); }
   .notif-btn.on { background: var(--green-soft); border-color: var(--green); color: var(--green); }
 
-  /* ---------- Nav tabs ---------- */
   nav.tabs { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; display: flex; gap: 4px; }
-  nav.tabs button {
-    border: none; background: none; color: var(--text-soft); font-weight: 600; font-size: 14px;
-    padding: 12px 14px; border-bottom: 2px solid transparent; transition: all .15s ease; position: relative;
-  }
+  nav.tabs button { border: none; background: none; color: var(--text-soft); font-weight: 600; font-size: 14px; padding: 12px 14px; border-bottom: 2px solid transparent; transition: all .15s ease; }
   nav.tabs button:hover { color: var(--text); }
   nav.tabs button.active { color: var(--accent-text); border-bottom-color: var(--accent); }
-  nav.tabs button .badge {
-    background: var(--red); color: #fff; font-size: 11px; font-weight: 700; border-radius: 999px;
-    padding: 1px 7px; margin-left: 6px; vertical-align: middle;
-  }
+  nav.tabs button .badge { background: var(--red); color: #fff; font-size: 11px; font-weight: 700; border-radius: 999px; padding: 1px 7px; margin-left: 6px; vertical-align: middle; }
 
-  /* ---------- Layout ---------- */
   main { max-width: var(--maxw); margin: 0 auto; padding: 28px 22px 80px; }
   .view { animation: fade .25s ease; }
   @keyframes fade { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: none; } }
   h1.page { font-size: 26px; font-weight: 800; letter-spacing: -.02em; margin: 0 0 4px; }
   .page-sub { color: var(--text-soft); margin: 0 0 24px; font-size: 14.5px; }
   .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-faint); margin: 32px 0 14px; }
-
-  /* ---------- Cards ---------- */
   .card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
 
-  /* Dashboard stat row */
   .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 8px; }
   .stat { padding: 18px 20px; }
   .stat .num { font-size: 30px; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
   .stat .lbl { color: var(--text-soft); font-size: 13px; font-weight: 500; margin-top: 7px; }
-  .stat .num.accent { color: var(--accent-text); }
-  .stat .num.green { color: var(--green); }
-  .stat .num.amber { color: var(--amber); }
+  .stat .num.accent { color: var(--accent-text); } .stat .num.green { color: var(--green); } .stat .num.amber { color: var(--amber); }
 
-  /* Subject progress cards */
   .subj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .subj-card { padding: 20px 22px; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
   .subj-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
@@ -143,15 +87,11 @@
   .subj-card .meta { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--text-soft); margin-bottom: 7px; }
   .subj-card .meta b { color: var(--text); font-weight: 700; }
 
-  /* Progress bar */
   .bar { height: 8px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; }
   .bar > span { display: block; height: 100%; border-radius: 999px; transition: width .4s ease; }
 
-  /* ---------- Subjects view ---------- */
   .subject-block { margin-bottom: 14px; }
-  .subject-head {
-    display: flex; align-items: center; gap: 13px; padding: 16px 20px; cursor: pointer; user-select: none;
-  }
+  .subject-head { display: flex; align-items: center; gap: 13px; padding: 16px 20px; cursor: pointer; user-select: none; }
   .subject-head h2 { margin: 0; font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
   .subject-head .src { color: var(--text-faint); font-size: 12.5px; font-weight: 500; }
   .subject-head .pct { margin-left: auto; font-weight: 700; font-size: 14px; color: var(--text-soft); }
@@ -161,14 +101,9 @@
   .subject-head .minibar { width: 90px; height: 6px; }
 
   .units { padding: 4px 16px 16px; display: grid; gap: 12px; }
-  .unit {
-    border: 1px solid var(--border-soft); border-radius: var(--radius-sm); background: var(--bg);
-    overflow: hidden;
-  }
+  .unit { border: 1px solid var(--border-soft); border-radius: var(--radius-sm); background: var(--bg); overflow: hidden; }
   html[data-theme="dark"] .unit { background: var(--bg-soft); }
-  .unit-head {
-    display: flex; align-items: center; gap: 12px; padding: 13px 16px; cursor: pointer; user-select: none;
-  }
+  .unit-head { display: flex; align-items: center; gap: 12px; padding: 13px 16px; cursor: pointer; user-select: none; }
   .unit-head .u-title { font-weight: 650; font-size: 15px; }
   .unit-head .u-chap { color: var(--text-faint); font-size: 12px; font-weight: 500; margin-top: 1px; }
   .unit-head .u-prog { margin-left: auto; display: flex; align-items: center; gap: 10px; }
@@ -179,86 +114,68 @@
   .unit-body { display: none; padding: 4px 16px 18px; border-top: 1px solid var(--border-soft); }
   .unit.open .unit-body { display: block; }
 
-  .submod { display: flex; align-items: flex-start; gap: 11px; padding: 9px 4px; border-bottom: 1px solid var(--border-soft); }
+  /* submodule rows (now carry section tags + per-submodule links) */
+  .submod { padding: 11px 4px 12px; border-bottom: 1px solid var(--border-soft); }
   .submod:last-child { border-bottom: none; }
+  .submod-row { display: flex; align-items: flex-start; gap: 11px; }
   .submod label { display: flex; align-items: flex-start; gap: 11px; cursor: pointer; font-size: 14px; flex: 1; }
   .submod input { display: none; }
-  .checkbox {
-    width: 20px; height: 20px; border-radius: 6px; border: 2px solid var(--border); flex: none; margin-top: 1px;
-    display: grid; place-items: center; transition: all .15s ease; color: #fff; font-size: 12px;
-  }
+  .checkbox { width: 20px; height: 20px; border-radius: 6px; border: 2px solid var(--border); flex: none; margin-top: 1px; display: grid; place-items: center; transition: all .15s ease; color: #fff; font-size: 12px; }
   .submod input:checked + .checkbox { background: var(--green); border-color: var(--green); }
   .submod input:not(:checked) + .checkbox { color: transparent; }
   .submod input:checked ~ .sm-text { color: var(--text-faint); text-decoration: line-through; }
   .sm-text { padding-top: 1px; }
+  .sec-tag { font-size: 11px; font-weight: 600; color: var(--text-faint); background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 6px; padding: 2px 8px; white-space: nowrap; margin-top: 1px; flex: none; }
+  .sm-links { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0 31px; }
+  .sm-links a { font-size: 11.5px; color: var(--accent-text); background: var(--accent-soft); border-radius: 6px; padding: 3px 9px; display: inline-flex; align-items: center; gap: 5px; line-height: 1.3; }
+  .sm-links a:hover { text-decoration: none; filter: brightness(.96); }
+  .sm-links a .ext { color: var(--text-faint); font-size: 10px; }
 
   .unit-meta { margin-top: 16px; display: grid; gap: 16px; }
   .meta-box { background: var(--bg-elev); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 14px 16px; }
   .meta-box h4 { margin: 0 0 10px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--text-faint); font-weight: 700; }
   .book-list { display: flex; flex-wrap: wrap; gap: 8px; }
-  .book-chip {
-    font-size: 12.5px; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 7px; padding: 4px 10px;
-  }
-  .book-chip b { font-weight: 650; }
-  .book-chip span { color: var(--text-soft); }
+  .book-chip { font-size: 12.5px; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 7px; padding: 4px 10px; }
+  .book-chip b { font-weight: 650; } .book-chip span { color: var(--text-soft); }
   .link-list { display: grid; gap: 7px; }
   .link-list a { font-size: 13.5px; display: flex; align-items: center; gap: 8px; }
   .link-list a .ext { color: var(--text-faint); font-size: 11px; }
   .vocab-list { display: flex; flex-wrap: wrap; gap: 7px; }
-  .vocab-pill {
-    font-size: 12.5px; background: var(--accent-soft); color: var(--accent-text); border-radius: 999px; padding: 4px 12px; font-weight: 500;
-  }
+  .vocab-pill { font-size: 12.5px; background: var(--accent-soft); color: var(--accent-text); border-radius: 999px; padding: 4px 12px; font-weight: 500; }
 
-  /* ---------- Review view ---------- */
   .review-col { display: grid; gap: 12px; }
-  .review-item {
-    display: flex; align-items: center; gap: 14px; padding: 15px 18px;
-  }
+  .review-item { display: flex; align-items: center; gap: 14px; padding: 15px 18px; }
   .review-item .ri-icon { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; flex: none; font-size: 17px; }
   .review-item .ri-main { flex: 1; min-width: 0; }
   .review-item .ri-title { font-weight: 600; font-size: 14.5px; }
   .review-item .ri-sub { color: var(--text-faint); font-size: 12.5px; margin-top: 2px; }
   .review-item .ri-due { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
-  .due-now { background: var(--red); color: #fff; }
-  .due-soon { background: var(--amber-soft); color: var(--amber); }
-  .btn {
-    border: 1px solid var(--border); background: var(--bg-elev); color: var(--text); font-weight: 600; font-size: 13px;
-    padding: 8px 15px; border-radius: 9px; transition: all .15s ease; white-space: nowrap;
-  }
+  .due-now { background: var(--red); color: #fff; } .due-soon { background: var(--amber-soft); color: var(--amber); }
+  .btn { border: 1px solid var(--border); background: var(--bg-elev); color: var(--text); font-weight: 600; font-size: 13px; padding: 8px 15px; border-radius: 9px; transition: all .15s ease; white-space: nowrap; }
   .btn:hover { border-color: var(--accent); color: var(--accent-text); }
   .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
   .btn.primary:hover { filter: brightness(1.08); color: #fff; }
   .vocab-review-card { padding: 18px 20px; }
   .vocab-review-card .vr-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .vocab-review-card .vr-head .ri-sub { color: var(--text-faint); font-size: 12.5px; }
   .vocab-review-card .terms { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
   .vocab-review-card .terms .vocab-pill { font-size: 13.5px; padding: 6px 14px; }
 
   .empty { text-align: center; padding: 54px 20px; color: var(--text-faint); }
-  .empty .big { font-size: 40px; margin-bottom: 10px; }
-  .empty p { margin: 4px 0; }
+  .empty .big { font-size: 40px; margin-bottom: 10px; } .empty p { margin: 4px 0; }
 
-  /* ---------- About ---------- */
   .prose { max-width: 720px; }
   .prose h2 { font-size: 19px; font-weight: 700; margin: 28px 0 10px; letter-spacing: -.01em; }
   .prose p, .prose li { color: var(--text-soft); font-size: 15px; }
-  .prose ol, .prose ul { padding-left: 22px; }
-  .prose li { margin: 6px 0; }
+  .prose ol, .prose ul { padding-left: 22px; } .prose li { margin: 6px 0; }
   .interval-pills { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
   .interval-pills .ip { background: var(--accent-soft); color: var(--accent-text); border-radius: 9px; padding: 8px 14px; font-weight: 700; font-size: 14px; text-align: center; }
   .interval-pills .ip small { display: block; font-weight: 500; color: var(--text-soft); font-size: 11px; }
 
-  /* ---------- Toast ---------- */
   #toaster { position: fixed; bottom: 22px; right: 22px; z-index: 100; display: grid; gap: 10px; max-width: 340px; }
-  .toast {
-    background: var(--bg-elev); border: 1px solid var(--border); border-left: 3px solid var(--accent);
-    box-shadow: var(--shadow-lg); border-radius: 11px; padding: 13px 16px; animation: slidein .3s ease;
-  }
+  .toast { background: var(--bg-elev); border: 1px solid var(--border); border-left: 3px solid var(--accent); box-shadow: var(--shadow-lg); border-radius: 11px; padding: 13px 16px; animation: slidein .3s ease; }
   .toast.success { border-left-color: var(--green); }
-  .toast .t-title { font-weight: 700; font-size: 13.5px; }
-  .toast .t-body { font-size: 13px; color: var(--text-soft); margin-top: 3px; }
+  .toast .t-title { font-weight: 700; font-size: 13.5px; } .toast .t-body { font-size: 13px; color: var(--text-soft); margin-top: 3px; }
   @keyframes slidein { from { opacity: 0; transform: translateX(40px);} to { opacity: 1; transform: none; } }
-
   .danger-link { background: none; border: none; color: var(--text-faint); font-size: 12.5px; text-decoration: underline; padding: 0; }
   .danger-link:hover { color: var(--red); }
 
@@ -268,20 +185,16 @@
     .brand small { display: none; }
     main { padding: 22px 16px 80px; }
     .header-inner, nav.tabs { padding-left: 16px; padding-right: 16px; }
+    .sm-links { margin-left: 0; }
   }
 </style>
 </head>
 <body>
 <header class="app">
   <div class="header-inner">
-    <div class="brand">
-      <span class="logo">✦</span>
-      <span>Lumen <small>spaced-repetition learning tracker</small></span>
-    </div>
+    <div class="brand"><span class="logo">✦</span><span>Lumen <small>spaced-repetition learning tracker</small></span></div>
     <span class="header-spacer"></span>
-    <button class="notif-btn" id="notifBtn" title="Enable browser reminders">
-      <span id="notifIcon">🔔</span><span id="notifLabel">Reminders</span>
-    </button>
+    <button class="notif-btn" id="notifBtn" title="Enable browser reminders"><span id="notifIcon">🔔</span><span id="notifLabel">Reminders</span></button>
     <button class="icon-btn" id="themeBtn" title="Toggle theme">🌙</button>
   </div>
   <nav class="tabs" id="tabs">
@@ -291,529 +204,576 @@
     <button data-tab="about">How it works</button>
   </nav>
 </header>
-
 <main id="main"></main>
 <div id="toaster"></div>
+
+<!-- ============================ CURRICULUM DATA ============================
+  Subjects are pushed onto CURRICULUM below. Each submodule is an object:
+  { t: title, sec: textbook section label, links: [[label, url], ...] }     -->
+<script>
+"use strict";
+var CURRICULUM = [];
+CURRICULUM.push({
+  id: "physics", name: "Physics", icon: "🪐", color: "#5b8def",
+  source: "Giancoli — Physics: Principles with Applications (7th ed.)",
+  units: [
+    { id: "ph-measure", title: "Introduction & Measurement",
+      chap: [["Giancoli","Ch. 1"],["Halliday/Resnick","Ch. 1"],["Serway/Vuille","Ch. 1"]],
+      vocab: ["Significant figures","SI units","Dimensional analysis","Order of magnitude","Uncertainty","Scientific notation"],
+      links: [["HyperPhysics — Units & measurement","http://hyperphysics.phy-astr.gsu.edu/hbase/units.html"]],
+      submods: [
+        { t: "The nature of science; models, theories & laws", sec: "Giancoli §1-1 to §1-3", links: [["Khan — Intro to physics","https://www.khanacademy.org/science/physics/one-dimensional-motion"],["The Physics Classroom","https://www.physicsclassroom.com/"]] },
+        { t: "Measurement & uncertainty; significant figures", sec: "Giancoli §1-4", links: [["Khan — Significant figures","https://www.khanacademy.org/math/cc-sixth-grade-math"],["HyperPhysics — Units","http://hyperphysics.phy-astr.gsu.edu/hbase/units.html"]] },
+        { t: "Units, standards & the SI system", sec: "Giancoli §1-5", links: [["NIST — SI units","https://www.nist.gov/pml/owm/metric-si/si-units"],["LibreTexts — Units & measurement","https://phys.libretexts.org/Bookshelves/University_Physics/University_Physics_(OpenStax)/Book%3A_University_Physics_I_-_Mechanics_Sound_Oscillations_and_Waves_(OpenStax)/01%3A_Units_and_Measurement"]] },
+        { t: "Converting units", sec: "Giancoli §1-6", links: [["Khan — Unit conversion","https://www.khanacademy.org/science/physics/one-dimensional-motion"]] },
+        { t: "Order-of-magnitude estimating", sec: "Giancoli §1-7", links: [["HyperPhysics — Estimation","http://hyperphysics.phy-astr.gsu.edu/hbase/units.html"]] },
+        { t: "Dimensions & dimensional analysis", sec: "Giancoli §1-8", links: [["HyperPhysics — Dimensional analysis","http://hyperphysics.phy-astr.gsu.edu/hbase/units.html"],["LibreTexts — Dimensional analysis","https://phys.libretexts.org/Bookshelves/University_Physics/University_Physics_(OpenStax)"]] }
+      ] },
+    { id: "ph-kin1d", title: "Kinematics in One Dimension",
+      chap: [["Giancoli","Ch. 2"],["Halliday/Resnick","Ch. 2"],["Serway/Vuille","Ch. 2"]],
+      vocab: ["Displacement","Velocity","Acceleration","Free fall","Kinematic equations","Instantaneous velocity"],
+      links: [["The Physics Classroom — 1-D Kinematics","https://www.physicsclassroom.com/class/1DKin"]],
+      submods: [
+        { t: "Reference frames & displacement", sec: "Giancoli §2-1", links: [["Khan — Displacement, velocity, time","https://www.khanacademy.org/science/physics/one-dimensional-motion"],["HyperPhysics — Motion","http://hyperphysics.phy-astr.gsu.edu/hbase/mot.html"]] },
+        { t: "Average velocity & speed", sec: "Giancoli §2-2", links: [["Physics Classroom — Speed & velocity","https://www.physicsclassroom.com/class/1DKin/Lesson-1/Speed-and-Velocity"]] },
+        { t: "Instantaneous velocity", sec: "Giancoli §2-3", links: [["HyperPhysics — Velocity","http://hyperphysics.phy-astr.gsu.edu/hbase/vel2.html"]] },
+        { t: "Acceleration", sec: "Giancoli §2-4", links: [["Khan — Acceleration","https://www.khanacademy.org/science/physics/one-dimensional-motion/acceleration-tutorial/v/acceleration"],["HyperPhysics — Acceleration","http://hyperphysics.phy-astr.gsu.edu/hbase/acca.html"]] },
+        { t: "Motion at constant acceleration; kinematic equations", sec: "Giancoli §2-5 to §2-6", links: [["HyperPhysics — Motion equations","http://hyperphysics.phy-astr.gsu.edu/hbase/mot.html"],["Physics Classroom — Kinematic equations","https://www.physicsclassroom.com/class/1DKin/Lesson-6/Kinematic-Equations"]] },
+        { t: "Freely falling objects", sec: "Giancoli §2-7", links: [["Khan — Free fall","https://www.khanacademy.org/science/physics/one-dimensional-motion"],["HyperPhysics — Free fall","http://hyperphysics.phy-astr.gsu.edu/hbase/traj.html"]] },
+        { t: "Graphical analysis of motion", sec: "Giancoli §2-8", links: [["Physics Classroom — Describing motion with graphs","https://www.physicsclassroom.com/class/1DKin/Lesson-3/The-Meaning-of-Shape-for-a-p-t-Graph"]] }
+      ] },
+    { id: "ph-kin2d", title: "Kinematics in Two Dimensions & Vectors",
+      chap: [["Giancoli","Ch. 3"],["Halliday/Resnick","Ch. 4"],["Serway/Vuille","Ch. 3"]],
+      vocab: ["Vector","Scalar","Projectile motion","Components","Relative velocity","Resultant"],
+      links: [["The Physics Classroom — Vectors & Projectiles","https://www.physicsclassroom.com/class/vectors"]],
+      submods: [
+        { t: "Vectors & scalars; graphical addition", sec: "Giancoli §3-1 to §3-2", links: [["Khan — Vectors","https://www.khanacademy.org/science/physics/two-dimensional-motion"],["HyperPhysics — Vectors","http://hyperphysics.phy-astr.gsu.edu/hbase/vect.html"]] },
+        { t: "Adding vectors by components", sec: "Giancoli §3-3 to §3-4", links: [["HyperPhysics — Vector components","http://hyperphysics.phy-astr.gsu.edu/hbase/vect.html"],["Physics Classroom — Component addition","https://www.physicsclassroom.com/class/vectors/Lesson-1/Vector-Components"]] },
+        { t: "Projectile motion", sec: "Giancoli §3-5 to §3-6", links: [["Khan — Projectile motion","https://www.khanacademy.org/science/physics/two-dimensional-motion"],["HyperPhysics — Trajectory","http://hyperphysics.phy-astr.gsu.edu/hbase/traj.html"]] },
+        { t: "Projectile motion is parabolic", sec: "Giancoli §3-7", links: [["Physics Classroom — Projectile motion","https://www.physicsclassroom.com/class/vectors/Lesson-2/What-is-a-Projectile"]] },
+        { t: "Relative velocity", sec: "Giancoli §3-8", links: [["Khan — Relative velocity","https://www.khanacademy.org/science/physics/two-dimensional-motion"],["HyperPhysics — Relative velocity","http://hyperphysics.phy-astr.gsu.edu/hbase/relmot.html"]] }
+      ] },
+    { id: "ph-newton", title: "Dynamics: Newton's Laws of Motion",
+      chap: [["Giancoli","Ch. 4"],["Halliday/Resnick","Ch. 5"],["Serway/Vuille","Ch. 4"]],
+      vocab: ["Force","Inertia","Mass","Friction","Normal force","Free-body diagram","Tension"],
+      links: [["The Physics Classroom — Newton's Laws","https://www.physicsclassroom.com/class/newtlaws"]],
+      submods: [
+        { t: "Force; Newton's first law (inertia)", sec: "Giancoli §4-1 to §4-2", links: [["Khan — Newton's first law","https://www.khanacademy.org/science/physics/forces-newtons-laws"],["HyperPhysics — Newton's laws","http://hyperphysics.phy-astr.gsu.edu/hbase/newt.html"]] },
+        { t: "Mass & Newton's second law (F = ma)", sec: "Giancoli §4-3 to §4-4", links: [["Khan — Newton's second law","https://www.khanacademy.org/science/physics/forces-newtons-laws"],["HyperPhysics — Second law","http://hyperphysics.phy-astr.gsu.edu/hbase/newt.html"]] },
+        { t: "Newton's third law of motion", sec: "Giancoli §4-5", links: [["Physics Classroom — Newton's third law","https://www.physicsclassroom.com/class/newtlaws/Lesson-4/Newton-s-Third-Law"]] },
+        { t: "Weight, gravity & the normal force", sec: "Giancoli §4-6", links: [["HyperPhysics — Weight","http://hyperphysics.phy-astr.gsu.edu/hbase/mass.html"]] },
+        { t: "Solving problems with free-body diagrams", sec: "Giancoli §4-7", links: [["Physics Classroom — Free-body diagrams","https://www.physicsclassroom.com/class/newtlaws/Lesson-2/Free-Body-Diagrams"],["Khan — Free-body diagrams","https://www.khanacademy.org/science/physics/forces-newtons-laws"]] },
+        { t: "Problems involving friction & inclines", sec: "Giancoli §4-8", links: [["HyperPhysics — Friction","http://hyperphysics.phy-astr.gsu.edu/hbase/frict.html"],["Khan — Inclined planes & friction","https://www.khanacademy.org/science/physics/forces-newtons-laws"]] }
+      ] },
+    { id: "ph-circ", title: "Circular Motion & Gravitation",
+      chap: [["Giancoli","Ch. 5"],["Halliday/Resnick","Ch. 6, 13"],["Serway/Vuille","Ch. 7"]],
+      vocab: ["Centripetal acceleration","Centripetal force","Universal gravitation","Orbital velocity","Kepler's laws"],
+      links: [["The Physics Classroom — Circular Motion & Gravitation","https://www.physicsclassroom.com/class/circles"]],
+      submods: [
+        { t: "Kinematics of uniform circular motion", sec: "Giancoli §5-1", links: [["Khan — Centripetal acceleration","https://www.khanacademy.org/science/physics/centripetal-force-and-gravitation"],["HyperPhysics — Circular motion","http://hyperphysics.phy-astr.gsu.edu/hbase/circ.html"]] },
+        { t: "Dynamics of uniform circular motion", sec: "Giancoli §5-2", links: [["HyperPhysics — Centripetal force","http://hyperphysics.phy-astr.gsu.edu/hbase/cf.html"]] },
+        { t: "Highway curves: banked & unbanked", sec: "Giancoli §5-3", links: [["HyperPhysics — Banked curves","http://hyperphysics.phy-astr.gsu.edu/hbase/carbank.html"]] },
+        { t: "Newton's law of universal gravitation", sec: "Giancoli §5-5 to §5-6", links: [["Khan — Newton's law of gravitation","https://www.khanacademy.org/science/physics/centripetal-force-and-gravitation"],["HyperPhysics — Gravity","http://hyperphysics.phy-astr.gsu.edu/hbase/grav.html"]] },
+        { t: "Satellites & weightlessness", sec: "Giancoli §5-7", links: [["HyperPhysics — Orbits","http://hyperphysics.phy-astr.gsu.edu/hbase/orbv.html"]] },
+        { t: "Kepler's laws & Newton's synthesis", sec: "Giancoli §5-8", links: [["Khan — Kepler's laws","https://www.khanacademy.org/science/physics/centripetal-force-and-gravitation"],["HyperPhysics — Kepler's laws","http://hyperphysics.phy-astr.gsu.edu/hbase/kepler.html"]] }
+      ] },
+    { id: "ph-energy", title: "Work & Energy",
+      chap: [["Giancoli","Ch. 6"],["Halliday/Resnick","Ch. 7-8"],["Serway/Vuille","Ch. 5"]],
+      vocab: ["Work","Kinetic energy","Potential energy","Conservation of energy","Power","Work-energy theorem"],
+      links: [["The Physics Classroom — Work, Energy & Power","https://www.physicsclassroom.com/class/energy"]],
+      submods: [
+        { t: "Work done by a constant force", sec: "Giancoli §6-1", links: [["Khan — Work","https://www.khanacademy.org/science/physics/work-and-energy"],["HyperPhysics — Work","http://hyperphysics.phy-astr.gsu.edu/hbase/work.html"]] },
+        { t: "Work done by a varying force", sec: "Giancoli §6-2", links: [["HyperPhysics — Work integral","http://hyperphysics.phy-astr.gsu.edu/hbase/wint.html"]] },
+        { t: "Kinetic energy & the work-energy principle", sec: "Giancoli §6-3", links: [["Khan — Work-energy theorem","https://www.khanacademy.org/science/physics/work-and-energy"],["HyperPhysics — Work-energy","http://hyperphysics.phy-astr.gsu.edu/hbase/work.html"]] },
+        { t: "Potential energy; conservative forces", sec: "Giancoli §6-4 to §6-5", links: [["HyperPhysics — Potential energy","http://hyperphysics.phy-astr.gsu.edu/hbase/pegrav.html"]] },
+        { t: "Conservation of mechanical energy", sec: "Giancoli §6-6 to §6-7", links: [["Khan — Conservation of energy","https://www.khanacademy.org/science/physics/work-and-energy"],["HyperPhysics — Energy conservation","http://hyperphysics.phy-astr.gsu.edu/hbase/conser.html"]] },
+        { t: "Power", sec: "Giancoli §6-10", links: [["Physics Classroom — Power","https://www.physicsclassroom.com/class/energy/Lesson-1/Power"]] }
+      ] },
+    { id: "ph-momentum", title: "Linear Momentum & Collisions",
+      chap: [["Giancoli","Ch. 7"],["Halliday/Resnick","Ch. 9"],["Serway/Vuille","Ch. 6"]],
+      vocab: ["Momentum","Impulse","Conservation of momentum","Elastic collision","Inelastic collision","Center of mass"],
+      links: [["The Physics Classroom — Momentum & Collisions","https://www.physicsclassroom.com/class/momentum"]],
+      submods: [
+        { t: "Momentum & its relation to force", sec: "Giancoli §7-1", links: [["Khan — Momentum","https://www.khanacademy.org/science/physics/linear-momentum"],["HyperPhysics — Momentum","http://hyperphysics.phy-astr.gsu.edu/hbase/mom.html"]] },
+        { t: "Conservation of momentum", sec: "Giancoli §7-2", links: [["HyperPhysics — Conservation of momentum","http://hyperphysics.phy-astr.gsu.edu/hbase/conmom.html"]] },
+        { t: "Collisions & impulse", sec: "Giancoli §7-3", links: [["Khan — Impulse","https://www.khanacademy.org/science/physics/linear-momentum"],["HyperPhysics — Impulse","http://hyperphysics.phy-astr.gsu.edu/hbase/impulse.html"]] },
+        { t: "Elastic collisions in one dimension", sec: "Giancoli §7-4 to §7-5", links: [["HyperPhysics — Elastic collisions","http://hyperphysics.phy-astr.gsu.edu/hbase/elacol.html"]] },
+        { t: "Inelastic collisions", sec: "Giancoli §7-6", links: [["HyperPhysics — Inelastic collisions","http://hyperphysics.phy-astr.gsu.edu/hbase/inecol.html"]] },
+        { t: "Center of mass & translational motion", sec: "Giancoli §7-8 to §7-9", links: [["Khan — Center of mass","https://www.khanacademy.org/science/physics/linear-momentum"],["HyperPhysics — Center of mass","http://hyperphysics.phy-astr.gsu.edu/hbase/cm.html"]] }
+      ] },
+    { id: "ph-rot", title: "Rotational Motion",
+      chap: [["Giancoli","Ch. 8"],["Halliday/Resnick","Ch. 10-11"],["Serway/Vuille","Ch. 8"]],
+      vocab: ["Torque","Angular velocity","Moment of inertia","Angular momentum","Rotational kinetic energy"],
+      links: [["HyperPhysics — Rotational motion","http://hyperphysics.phy-astr.gsu.edu/hbase/rotq.html"]],
+      submods: [
+        { t: "Angular quantities", sec: "Giancoli §8-1", links: [["Khan — Angular motion variables","https://www.khanacademy.org/science/physics/torque-angular-momentum"],["HyperPhysics — Rotation","http://hyperphysics.phy-astr.gsu.edu/hbase/rotq.html"]] },
+        { t: "Constant angular acceleration; rolling", sec: "Giancoli §8-2 to §8-3", links: [["HyperPhysics — Rolling","http://hyperphysics.phy-astr.gsu.edu/hbase/rolmot.html"]] },
+        { t: "Torque", sec: "Giancoli §8-4", links: [["Khan — Torque","https://www.khanacademy.org/science/physics/torque-angular-momentum"],["HyperPhysics — Torque","http://hyperphysics.phy-astr.gsu.edu/hbase/torq.html"]] },
+        { t: "Rotational dynamics; moment of inertia", sec: "Giancoli §8-5 to §8-6", links: [["HyperPhysics — Moment of inertia","http://hyperphysics.phy-astr.gsu.edu/hbase/mi.html"]] },
+        { t: "Rotational kinetic energy", sec: "Giancoli §8-7", links: [["HyperPhysics — Rotational KE","http://hyperphysics.phy-astr.gsu.edu/hbase/rke.html"]] },
+        { t: "Angular momentum & its conservation", sec: "Giancoli §8-8 to §8-9", links: [["Khan — Angular momentum","https://www.khanacademy.org/science/physics/torque-angular-momentum"],["HyperPhysics — Angular momentum","http://hyperphysics.phy-astr.gsu.edu/hbase/amom.html"]] }
+      ] },
+    { id: "ph-statics", title: "Static Equilibrium, Elasticity & Fluids",
+      chap: [["Giancoli","Ch. 9-10"],["Halliday/Resnick","Ch. 12, 14"],["Serway/Vuille","Ch. 8-9"]],
+      vocab: ["Equilibrium","Stress","Strain","Young's modulus","Pressure","Buoyancy","Bernoulli's principle"],
+      links: [["The Physics Classroom — Static Electricity? no — Fluids via LibreTexts","https://phys.libretexts.org/Bookshelves/University_Physics/University_Physics_(OpenStax)"]],
+      submods: [
+        { t: "Conditions for static equilibrium", sec: "Giancoli §9-1 to §9-2", links: [["Khan — Torque & equilibrium","https://www.khanacademy.org/science/physics/torque-angular-momentum"],["HyperPhysics — Equilibrium","http://hyperphysics.phy-astr.gsu.edu/hbase/torq2.html"]] },
+        { t: "Elasticity; stress & strain", sec: "Giancoli §9-5", links: [["HyperPhysics — Elasticity","http://hyperphysics.phy-astr.gsu.edu/hbase/permot3.html"]] },
+        { t: "Density & pressure in fluids", sec: "Giancoli §10-1 to §10-4", links: [["Khan — Fluids & pressure","https://www.khanacademy.org/science/physics/fluids"],["HyperPhysics — Pressure","http://hyperphysics.phy-astr.gsu.edu/hbase/pflu.html"]] },
+        { t: "Buoyancy & Archimedes' principle", sec: "Giancoli §10-7", links: [["HyperPhysics — Buoyancy","http://hyperphysics.phy-astr.gsu.edu/hbase/pbuoy.html"]] },
+        { t: "Fluid flow, continuity & Bernoulli's equation", sec: "Giancoli §10-8 to §10-10", links: [["Khan — Bernoulli's equation","https://www.khanacademy.org/science/physics/fluids"],["HyperPhysics — Bernoulli","http://hyperphysics.phy-astr.gsu.edu/hbase/pber.html"]] }
+      ] },
+    { id: "ph-waves", title: "Vibrations, Waves & Sound",
+      chap: [["Giancoli","Ch. 11-12"],["Halliday/Resnick","Ch. 15-17"],["Serway/Vuille","Ch. 13-14"]],
+      vocab: ["Simple harmonic motion","Amplitude","Resonance","Wavelength","Doppler effect","Standing wave","Interference"],
+      links: [["The Physics Classroom — Waves","https://www.physicsclassroom.com/class/waves"]],
+      submods: [
+        { t: "Simple harmonic motion — springs", sec: "Giancoli §11-1 to §11-3", links: [["Khan — Simple harmonic motion","https://www.khanacademy.org/science/physics/mechanical-waves-and-sound"],["HyperPhysics — SHM","http://hyperphysics.phy-astr.gsu.edu/hbase/shm.html"]] },
+        { t: "The simple pendulum", sec: "Giancoli §11-4", links: [["HyperPhysics — Pendulum","http://hyperphysics.phy-astr.gsu.edu/hbase/pend.html"]] },
+        { t: "Damped & forced oscillations; resonance", sec: "Giancoli §11-5 to §11-6", links: [["HyperPhysics — Forced oscillation & resonance","http://hyperphysics.phy-astr.gsu.edu/hbase/oscdr.html"]] },
+        { t: "Wave motion, types & energy", sec: "Giancoli §11-7 to §11-9", links: [["Khan — Wave properties","https://www.khanacademy.org/science/physics/mechanical-waves-and-sound"],["Physics Classroom — Waves","https://www.physicsclassroom.com/class/waves/Lesson-2/What-is-a-Wave"]] },
+        { t: "Interference & standing waves", sec: "Giancoli §11-12 to §11-13", links: [["HyperPhysics — Standing waves","http://hyperphysics.phy-astr.gsu.edu/hbase/waves/standw.html"]] },
+        { t: "Sound intensity (decibels)", sec: "Giancoli §12-1 to §12-2", links: [["HyperPhysics — Decibels","http://hyperphysics.phy-astr.gsu.edu/hbase/sound/db.html"]] },
+        { t: "The Doppler effect", sec: "Giancoli §12-7", links: [["Khan — Doppler effect","https://www.khanacademy.org/science/physics/mechanical-waves-and-sound"],["HyperPhysics — Doppler","http://hyperphysics.phy-astr.gsu.edu/hbase/sound/dopp.html"]] }
+      ] },
+    { id: "ph-thermal", title: "Temperature, Kinetic Theory & Heat",
+      chap: [["Giancoli","Ch. 13-14"],["Atkins (Phys. Chem.)","Topic 1A-1B"],["Halliday/Resnick","Ch. 18-19"]],
+      vocab: ["Temperature","Ideal gas law","Kinetic theory","Specific heat","Latent heat","Heat transfer"],
+      links: [["HyperPhysics — Heat & thermodynamics","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/thercon.html"]],
+      submods: [
+        { t: "Temperature, thermometers & thermal expansion", sec: "Giancoli §13-1 to §13-4", links: [["Khan — Temperature & thermal expansion","https://www.khanacademy.org/science/physics/thermodynamics"],["HyperPhysics — Temperature","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/temper.html"]] },
+        { t: "Gas laws & the ideal gas law", sec: "Giancoli §13-6 to §13-8", links: [["Khan — Ideal gas law","https://www.khanacademy.org/science/physics/thermodynamics"],["HyperPhysics — Ideal gas law","http://hyperphysics.phy-astr.gsu.edu/hbase/kinetic/idegas.html"]] },
+        { t: "Kinetic theory & molecular interpretation of T", sec: "Giancoli §13-10 to §13-11", links: [["HyperPhysics — Kinetic theory","http://hyperphysics.phy-astr.gsu.edu/hbase/kinetic/kintem.html"]] },
+        { t: "Heat as energy transfer; specific heat", sec: "Giancoli §14-1 to §14-3", links: [["Khan — Specific heat","https://www.khanacademy.org/science/physics/thermodynamics"],["HyperPhysics — Specific heat","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/spht.html"]] },
+        { t: "Calorimetry & latent heat", sec: "Giancoli §14-4 to §14-5", links: [["HyperPhysics — Latent heat","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/phase.html"]] },
+        { t: "Heat transfer: conduction, convection, radiation", sec: "Giancoli §14-6 to §14-8", links: [["HyperPhysics — Heat transfer","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/heatra.html"]] }
+      ] },
+    { id: "ph-thermo", title: "The Laws of Thermodynamics",
+      chap: [["Giancoli","Ch. 15"],["Atkins (Phys. Chem.)","Topic 2A, 3A"],["Halliday/Resnick","Ch. 20"]],
+      vocab: ["First law","Internal energy","Entropy","Second law","Carnot cycle","Heat engine","Efficiency"],
+      links: [["HyperPhysics — Thermodynamics","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/thermo.html"]],
+      submods: [
+        { t: "First law of thermodynamics", sec: "Giancoli §15-1", links: [["Khan — First law","https://www.khanacademy.org/science/physics/thermodynamics"],["HyperPhysics — First law","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/firlaw.html"]] },
+        { t: "Thermodynamic processes (isothermal, adiabatic)", sec: "Giancoli §15-2 to §15-3", links: [["HyperPhysics — Thermodynamic processes","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/firlaw.html"]] },
+        { t: "Heat engines & efficiency", sec: "Giancoli §15-5", links: [["Khan — Heat engines","https://www.khanacademy.org/science/physics/thermodynamics"],["HyperPhysics — Heat engine","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/heaeng.html"]] },
+        { t: "The Carnot cycle", sec: "Giancoli §15-5", links: [["HyperPhysics — Carnot cycle","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/carnot.html"]] },
+        { t: "Refrigerators, A/C & heat pumps", sec: "Giancoli §15-6", links: [["HyperPhysics — Heat pump","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/heatpump.html"]] },
+        { t: "Entropy & the second law", sec: "Giancoli §15-7 to §15-8", links: [["Khan — Entropy","https://www.khanacademy.org/science/physics/thermodynamics"],["HyperPhysics — Entropy","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/entrop.html"]] }
+      ] },
+    { id: "ph-efield", title: "Electric Charge, Field & Potential",
+      chap: [["Giancoli","Ch. 16-17"],["Halliday/Resnick","Ch. 21-24"],["Serway/Vuille","Ch. 15-16"]],
+      vocab: ["Coulomb's law","Electric field","Electric potential","Capacitance","Gauss's law","Voltage"],
+      links: [["The Physics Classroom — Static Electricity","https://www.physicsclassroom.com/class/estatics"]],
+      submods: [
+        { t: "Electric charge, conductors & insulators", sec: "Giancoli §16-1 to §16-4", links: [["Khan — Charge","https://www.khanacademy.org/science/physics/electric-charge-electric-force-and-voltage"],["HyperPhysics — Electric charge","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elecur.html"]] },
+        { t: "Coulomb's law", sec: "Giancoli §16-5", links: [["Khan — Coulomb's law","https://www.khanacademy.org/science/physics/electric-charge-electric-force-and-voltage"],["HyperPhysics — Coulomb's law","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elefor.html"]] },
+        { t: "The electric field & field lines", sec: "Giancoli §16-6 to §16-7", links: [["HyperPhysics — Electric field","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elefie.html"]] },
+        { t: "Gauss's law", sec: "Giancoli §16-10", links: [["HyperPhysics — Gauss's law","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/gaulaw.html"]] },
+        { t: "Electric potential & potential difference", sec: "Giancoli §17-1 to §17-5", links: [["Khan — Electric potential","https://www.khanacademy.org/science/physics/electric-charge-electric-force-and-voltage"],["HyperPhysics — Electric potential","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elepot.html"]] },
+        { t: "Capacitance, dielectrics & energy storage", sec: "Giancoli §17-7 to §17-9", links: [["HyperPhysics — Capacitance","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/capac.html"]] }
+      ] },
+    { id: "ph-circuits", title: "Electric Currents & DC Circuits",
+      chap: [["Giancoli","Ch. 18-19"],["Halliday/Resnick","Ch. 26-27"],["Serway/Vuille","Ch. 17-18"]],
+      vocab: ["Current","Resistance","Ohm's law","EMF","Kirchhoff's rules","Series & parallel","RC circuit"],
+      links: [["The Physics Classroom — Current Electricity","https://www.physicsclassroom.com/class/circuits"]],
+      submods: [
+        { t: "The electric battery & electric current", sec: "Giancoli §18-1 to §18-2", links: [["Khan — Current","https://www.khanacademy.org/science/physics/circuits-topic"],["HyperPhysics — Current","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elecur.html"]] },
+        { t: "Ohm's law: resistance & resistivity", sec: "Giancoli §18-3 to §18-4", links: [["Khan — Ohm's law","https://www.khanacademy.org/science/physics/circuits-topic"],["HyperPhysics — Ohm's law","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/ohmlaw.html"]] },
+        { t: "Electric power", sec: "Giancoli §18-5 to §18-6", links: [["HyperPhysics — Electric power","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elepow.html"]] },
+        { t: "EMF & resistors in series and parallel", sec: "Giancoli §19-1 to §19-2", links: [["Khan — Series & parallel","https://www.khanacademy.org/science/physics/circuits-topic"],["HyperPhysics — Series/parallel","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/serpar.html"]] },
+        { t: "Kirchhoff's rules", sec: "Giancoli §19-3", links: [["HyperPhysics — Kirchhoff's rules","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/kirchoff.html"]] },
+        { t: "RC circuits", sec: "Giancoli §19-5", links: [["HyperPhysics — RC circuits","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/rc.html"]] }
+      ] },
+    { id: "ph-magnet", title: "Magnetism & Electromagnetic Induction",
+      chap: [["Giancoli","Ch. 20-21"],["Halliday/Resnick","Ch. 28-30"],["Serway/Vuille","Ch. 19-20"]],
+      vocab: ["Magnetic field","Lorentz force","Faraday's law","Lenz's law","Inductance","Ampère's law"],
+      links: [["HyperPhysics — Magnetism","http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magfie.html"]],
+      submods: [
+        { t: "Magnets, magnetic fields & currents", sec: "Giancoli §20-1 to §20-2", links: [["Khan — Magnetic fields","https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields"],["HyperPhysics — Magnetic field","http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magfie.html"]] },
+        { t: "Force on a current & on a moving charge", sec: "Giancoli §20-3 to §20-4", links: [["HyperPhysics — Magnetic force","http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magfor.html"]] },
+        { t: "Magnetic field of a wire; Ampère's law", sec: "Giancoli §20-5 to §20-8", links: [["HyperPhysics — Ampère's law","http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/amplaw.html"]] },
+        { t: "Induced EMF; Faraday's & Lenz's laws", sec: "Giancoli §21-1 to §21-3", links: [["Khan — Faraday's law","https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields"],["HyperPhysics — Faraday's law","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/farlaw.html"]] },
+        { t: "Generators & transformers", sec: "Giancoli §21-5 to §21-7", links: [["HyperPhysics — Generator","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elemot.html"]] },
+        { t: "Inductance & AC circuits", sec: "Giancoli §21-9 to §21-13", links: [["HyperPhysics — Inductance","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/indra.html"]] }
+      ] },
+    { id: "ph-optics", title: "Electromagnetic Waves & Optics",
+      chap: [["Giancoli","Ch. 22-25"],["Halliday/Resnick","Ch. 33-36"],["Serway/Vuille","Ch. 21-25"]],
+      vocab: ["Electromagnetic spectrum","Reflection","Refraction","Snell's law","Diffraction","Interference","Lens"],
+      links: [["The Physics Classroom — Light & Optics","https://www.physicsclassroom.com/class/refln"]],
+      submods: [
+        { t: "EM waves & the electromagnetic spectrum", sec: "Giancoli §22-1 to §22-3", links: [["Khan — Electromagnetic waves","https://www.khanacademy.org/science/physics/light-waves"],["HyperPhysics — EM spectrum","http://hyperphysics.phy-astr.gsu.edu/hbase/ems1.html"]] },
+        { t: "Reflection & image formation by mirrors", sec: "Giancoli §23-1 to §23-3", links: [["Physics Classroom — Reflection & mirrors","https://www.physicsclassroom.com/class/refln"],["HyperPhysics — Mirrors","http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/mirror.html"]] },
+        { t: "Refraction & Snell's law", sec: "Giancoli §23-4 to §23-6", links: [["Khan — Refraction & Snell's law","https://www.khanacademy.org/science/physics/geometric-optics"],["HyperPhysics — Refraction","http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/refr.html"]] },
+        { t: "Thin lenses & the lens equation", sec: "Giancoli §23-7 to §23-10", links: [["HyperPhysics — Lenses","http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/lens.html"]] },
+        { t: "Interference & Young's double slit", sec: "Giancoli §24-3 to §24-5", links: [["Khan — Interference of light","https://www.khanacademy.org/science/physics/light-waves"],["HyperPhysics — Double slit","http://hyperphysics.phy-astr.gsu.edu/hbase/phyopt/slits.html"]] },
+        { t: "Diffraction & the diffraction grating", sec: "Giancoli §24-8 to §24-9", links: [["HyperPhysics — Diffraction grating","http://hyperphysics.phy-astr.gsu.edu/hbase/phyopt/grating.html"]] }
+      ] },
+    { id: "ph-relativity", title: "The Special Theory of Relativity",
+      chap: [["Giancoli","Ch. 26"],["Halliday/Resnick","Ch. 37"],["Serway/Vuille","Ch. 26"]],
+      vocab: ["Time dilation","Length contraction","Lorentz transformation","Mass-energy equivalence","Simultaneity"],
+      links: [["HyperPhysics — Special relativity","http://hyperphysics.phy-astr.gsu.edu/hbase/relativ/srelcon.html"]],
+      submods: [
+        { t: "Postulates of special relativity", sec: "Giancoli §26-1 to §26-3", links: [["Khan — Special relativity","https://www.khanacademy.org/science/physics/special-relativity"],["HyperPhysics — Postulates","http://hyperphysics.phy-astr.gsu.edu/hbase/relativ/srelcon.html"]] },
+        { t: "Simultaneity", sec: "Giancoli §26-4", links: [["HyperPhysics — Simultaneity","http://hyperphysics.phy-astr.gsu.edu/hbase/relativ/simrel.html"]] },
+        { t: "Time dilation & the twin paradox", sec: "Giancoli §26-5", links: [["HyperPhysics — Time dilation","http://hyperphysics.phy-astr.gsu.edu/hbase/relativ/tdil.html"]] },
+        { t: "Length contraction", sec: "Giancoli §26-6", links: [["HyperPhysics — Length contraction","http://hyperphysics.phy-astr.gsu.edu/hbase/relativ/tdil.html"]] },
+        { t: "Relativistic momentum & E = mc²", sec: "Giancoli §26-8 to §26-10", links: [["Khan — Mass-energy equivalence","https://www.khanacademy.org/science/physics/special-relativity"],["HyperPhysics — Relativistic energy","http://hyperphysics.phy-astr.gsu.edu/hbase/relativ/releng.html"]] }
+      ] },
+    { id: "ph-quantum", title: "Quantum Theory & Atomic Physics",
+      chap: [["Giancoli","Ch. 27-28"],["Atkins (Phys. Chem.)","Topic 7A, 8A-8B"],["Halliday/Resnick","Ch. 38-40"]],
+      vocab: ["Photon","Photoelectric effect","Wave-particle duality","Uncertainty principle","Quantum numbers","Bohr model"],
+      links: [["HyperPhysics — Quantum physics","http://hyperphysics.phy-astr.gsu.edu/hbase/quacon.html"]],
+      submods: [
+        { t: "Planck's hypothesis & blackbody radiation", sec: "Giancoli §27-1", links: [["Khan — Quantum physics","https://www.khanacademy.org/science/physics/quantum-physics"],["HyperPhysics — Blackbody radiation","http://hyperphysics.phy-astr.gsu.edu/hbase/mod6.html"]] },
+        { t: "Photon theory & the photoelectric effect", sec: "Giancoli §27-2", links: [["Khan — Photoelectric effect","https://www.khanacademy.org/science/physics/quantum-physics"],["HyperPhysics — Photoelectric effect","http://hyperphysics.phy-astr.gsu.edu/hbase/mod2.html"]] },
+        { t: "Wave-particle duality & matter waves", sec: "Giancoli §27-6 to §27-7", links: [["HyperPhysics — de Broglie wavelength","http://hyperphysics.phy-astr.gsu.edu/hbase/debrog.html"]] },
+        { t: "The Bohr model of the atom", sec: "Giancoli §27-11", links: [["Khan — Bohr model","https://www.khanacademy.org/science/physics/quantum-physics"],["HyperPhysics — Bohr model","http://hyperphysics.phy-astr.gsu.edu/hbase/bohr.html"]] },
+        { t: "The uncertainty principle", sec: "Giancoli §28-3", links: [["HyperPhysics — Uncertainty principle","http://hyperphysics.phy-astr.gsu.edu/hbase/uncer.html"]] },
+        { t: "Quantum mechanics of atoms; quantum numbers", sec: "Giancoli §28-5 to §28-8", links: [["HyperPhysics — Hydrogen quantum numbers","http://hyperphysics.phy-astr.gsu.edu/hbase/hydwf.html"]] }
+      ] },
+    { id: "ph-nuclear", title: "Nuclear & Particle Physics",
+      chap: [["Giancoli","Ch. 30-32"],["Halliday/Resnick","Ch. 42-44"],["Serway/Vuille","Ch. 29-30"]],
+      vocab: ["Radioactivity","Half-life","Fission","Fusion","Binding energy","Standard model","Quark"],
+      links: [["HyperPhysics — Nuclear structure","http://hyperphysics.phy-astr.gsu.edu/hbase/nuccon.html"]],
+      submods: [
+        { t: "Nuclear structure & binding energy", sec: "Giancoli §30-1 to §30-2", links: [["Khan — Nuclear physics","https://www.khanacademy.org/science/physics/quantum-physics/in-in-nuclei"],["HyperPhysics — Binding energy","http://hyperphysics.phy-astr.gsu.edu/hbase/nucene/nucbin.html"]] },
+        { t: "Radioactivity: alpha, beta, gamma decay", sec: "Giancoli §30-3 to §30-6", links: [["HyperPhysics — Radioactivity","http://hyperphysics.phy-astr.gsu.edu/hbase/nuclear/radact.html"]] },
+        { t: "Half-life & radioactive dating", sec: "Giancoli §30-8 to §30-10", links: [["Khan — Half-life","https://www.khanacademy.org/science/physics/quantum-physics/in-in-nuclei"],["HyperPhysics — Half-life","http://hyperphysics.phy-astr.gsu.edu/hbase/nuclear/halfli.html"]] },
+        { t: "Nuclear fission & reactors", sec: "Giancoli §31-3", links: [["HyperPhysics — Fission","http://hyperphysics.phy-astr.gsu.edu/hbase/nucene/fission.html"]] },
+        { t: "Nuclear fusion", sec: "Giancoli §31-4", links: [["HyperPhysics — Fusion","http://hyperphysics.phy-astr.gsu.edu/hbase/nucene/fusion.html"]] },
+        { t: "Elementary particles & the Standard Model", sec: "Giancoli §32", links: [["CERN — The Standard Model","https://home.cern/science/physics/standard-model"],["HyperPhysics — Particles","http://hyperphysics.phy-astr.gsu.edu/hbase/particles/parint.html"]] }
+      ] }
+  ]
+});
+CURRICULUM.push({
+  id: "chemistry", name: "Chemistry", icon: "⚗️", color: "#1aa672",
+  source: "Atkins & Jones — Chemical Principles: The Quest for Insight",
+  units: [
+    { id: "ch-fundamentals", title: "Fundamentals: Atoms, Moles & Stoichiometry",
+      chap: [["Chem. Principles","Fundamentals A-M"],["Oxtoby","Ch. 1-2"],["Brown (LeMay)","Ch. 1-3"]],
+      vocab: ["Mole","Avogadro's number","Stoichiometry","Limiting reagent","Empirical formula","Molarity"],
+      links: [["LibreTexts — General Chemistry","https://chem.libretexts.org/Bookshelves/General_Chemistry"]],
+      submods: [
+        { t: "Matter & energy; elements & atoms", sec: "Chem. Principles, Fund. A-B", links: [["Khan — Atomic structure","https://www.khanacademy.org/science/chemistry/atomic-structure-and-properties"],["OpenStax Chemistry 2e — Atoms","https://openstax.org/books/chemistry-2e/pages/2-introduction"]] },
+        { t: "Compounds & chemical nomenclature", sec: "Chem. Principles, Fund. C-D", links: [["Khan — Names & formulas","https://www.khanacademy.org/science/chemistry/atomic-structure-and-properties"],["LibreTexts — Nomenclature","https://chem.libretexts.org/Bookshelves/General_Chemistry"]] },
+        { t: "The mole & molar mass", sec: "Chem. Principles, Fund. E", links: [["Khan — The mole & Avogadro's number","https://www.khanacademy.org/science/chemistry/atomic-structure-and-properties"],["OpenStax — The mole","https://openstax.org/books/chemistry-2e/pages/3-introduction"]] },
+        { t: "Determining chemical formulas", sec: "Chem. Principles, Fund. F", links: [["LibreTexts — Empirical & molecular formulas","https://chem.libretexts.org/Bookshelves/General_Chemistry"]] },
+        { t: "Chemical equations & balancing", sec: "Chem. Principles, Fund. H", links: [["Khan — Balancing equations","https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiome"]] },
+        { t: "Reaction stoichiometry & limiting reactants", sec: "Chem. Principles, Fund. L-M", links: [["Khan — Stoichiometry","https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiome"],["OpenStax — Stoichiometry","https://openstax.org/books/chemistry-2e/pages/4-introduction"]] },
+        { t: "Solution concentration & molarity", sec: "Chem. Principles, Fund. G", links: [["Khan — Molarity","https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiome"]] }
+      ] },
+    { id: "ch-quantum", title: "The Quantum World & Atomic Structure",
+      chap: [["Chem. Principles","Ch. 1"],["Atkins (Phys. Chem.)","Topic 7A, 8A-8C"],["Brown (LeMay)","Ch. 6"]],
+      vocab: ["Orbital","Quantum number","Electron configuration","Aufbau principle","Periodic trends","Ionization energy"],
+      links: [["Khan — Electronic structure of atoms","https://www.khanacademy.org/science/chemistry/electronic-structure-of-atoms"]],
+      submods: [
+        { t: "Light, photons & atomic spectra", sec: "Chem. Principles §1; Atkins Topic 7A", links: [["Khan — Bohr's model & spectra","https://www.khanacademy.org/science/chemistry/electronic-structure-of-atoms"],["LibreTexts — Atomic spectra","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Atomic orbitals & quantum numbers", sec: "Chem. Principles §1; Atkins Topic 8A", links: [["Khan — Quantum numbers & orbitals","https://www.khanacademy.org/science/chemistry/electronic-structure-of-atoms"],["HyperPhysics — Hydrogen orbitals","http://hyperphysics.phy-astr.gsu.edu/hbase/hydwf.html"]] },
+        { t: "Electron configurations & the building-up principle", sec: "Chem. Principles §1; Atkins Topic 8B", links: [["Khan — Electron configurations","https://www.khanacademy.org/science/chemistry/electronic-structure-of-atoms"]] },
+        { t: "The periodic table & periodicity", sec: "Chem. Principles §1", links: [["Khan — Periodic table trends","https://www.khanacademy.org/science/chemistry/periodic-table"]] },
+        { t: "Periodic trends (radius, ionization energy)", sec: "Chem. Principles §1; Atkins Topic 8B", links: [["Khan — Periodic trends","https://www.khanacademy.org/science/chemistry/periodic-table"],["LibreTexts — Periodic trends","https://chem.libretexts.org/Bookshelves/General_Chemistry"]] }
+      ] },
+    { id: "ch-bonding", title: "Chemical Bonds & Molecular Structure",
+      chap: [["Chem. Principles","Ch. 2-3"],["Atkins (Phys. Chem.)","Topic 9A-9C, 10A"],["Brown (LeMay)","Ch. 8-9"]],
+      vocab: ["Ionic bond","Covalent bond","Lewis structure","VSEPR","Hybridization","Polarity","Electronegativity"],
+      links: [["Khan — Chemical bonds","https://www.khanacademy.org/science/chemistry/chemical-bonds"]],
+      submods: [
+        { t: "Ionic bonding", sec: "Chem. Principles §2", links: [["Khan — Ionic bonds","https://www.khanacademy.org/science/chemistry/chemical-bonds"],["LibreTexts — Ionic bonding","https://chem.libretexts.org/Bookshelves/General_Chemistry"]] },
+        { t: "Covalent bonding & Lewis structures", sec: "Chem. Principles §2", links: [["Khan — Lewis diagrams","https://www.khanacademy.org/science/chemistry/chemical-bonds"]] },
+        { t: "VSEPR & molecular geometry", sec: "Chem. Principles §3", links: [["Khan — VSEPR theory","https://www.khanacademy.org/science/chemistry/chemical-bonds"],["LibreTexts — VSEPR","https://chem.libretexts.org/Bookshelves/General_Chemistry"]] },
+        { t: "Valence bond theory & hybridization", sec: "Chem. Principles §3; Atkins Topic 9A", links: [["Khan — Hybridization","https://www.khanacademy.org/science/chemistry/chemical-bonds"]] },
+        { t: "Molecular orbital theory", sec: "Chem. Principles §3; Atkins Topic 9B-9C", links: [["LibreTexts — MO theory","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] }
+      ] },
+    { id: "ch-states", title: "Gases, Liquids & Solids",
+      chap: [["Chem. Principles","Ch. 4-5"],["Atkins (Phys. Chem.)","Topic 1A-1C, 15A"],["Brown (LeMay)","Ch. 10-12"]],
+      vocab: ["Ideal gas law","Partial pressure","Intermolecular forces","Phase diagram","Crystal lattice","Vapor pressure"],
+      links: [["Khan — States of matter & IMFs","https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces"]],
+      submods: [
+        { t: "Gas laws & the ideal gas equation", sec: "Chem. Principles §4; Atkins Topic 1A", links: [["Khan — Ideal gas law","https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory"],["HyperPhysics — Ideal gas","http://hyperphysics.phy-astr.gsu.edu/hbase/kinetic/idegas.html"]] },
+        { t: "Kinetic molecular theory & real gases", sec: "Chem. Principles §4; Atkins Topic 1B-1C", links: [["Khan — Kinetic molecular theory","https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory"]] },
+        { t: "Intermolecular forces", sec: "Chem. Principles §5; Atkins Topic 14B", links: [["Khan — Intermolecular forces","https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces"]] },
+        { t: "Liquids & phase changes", sec: "Chem. Principles §5", links: [["Khan — Phase changes","https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces"],["LibreTexts — Phase transitions","https://chem.libretexts.org/Bookshelves/General_Chemistry"]] },
+        { t: "Solids & crystal structures", sec: "Chem. Principles §5; Atkins Topic 15A", links: [["LibreTexts — Crystal structure","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] }
+      ] },
+    { id: "ch-equilibrium", title: "Chemical & Physical Equilibria",
+      chap: [["Chem. Principles","Ch. 9-10"],["Atkins (Phys. Chem.)","Topic 6A-6B"],["Brown (LeMay)","Ch. 15-17"]],
+      vocab: ["Equilibrium constant","Le Chatelier's principle","Reaction quotient","Solubility product","Common ion effect"],
+      links: [["Khan — Chemical equilibrium","https://www.khanacademy.org/science/chemistry/chemical-equilibrium"]],
+      submods: [
+        { t: "The equilibrium constant K", sec: "Chem. Principles §10; Atkins Topic 6A", links: [["Khan — Equilibrium constant","https://www.khanacademy.org/science/chemistry/chemical-equilibrium"],["LibreTexts — Equilibrium constants","https://chem.libretexts.org/Bookshelves/General_Chemistry"]] },
+        { t: "Reaction quotient Q", sec: "Chem. Principles §10", links: [["Khan — The reaction quotient","https://www.khanacademy.org/science/chemistry/chemical-equilibrium"]] },
+        { t: "Le Chatelier's principle", sec: "Chem. Principles §10; Atkins Topic 6B", links: [["Khan — Le Chatelier's principle","https://www.khanacademy.org/science/chemistry/chemical-equilibrium"]] },
+        { t: "Solubility equilibria (Ksp)", sec: "Chem. Principles §12", links: [["Khan — Solubility equilibria","https://www.khanacademy.org/science/chemistry/chemical-equilibrium"]] },
+        { t: "Physical equilibria & phase transitions", sec: "Chem. Principles §9; Atkins Topic 4A", links: [["LibreTexts — Phase equilibria","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] }
+      ] },
+    { id: "ch-acidbase", title: "Acids, Bases & Aqueous Equilibria",
+      chap: [["Chem. Principles","Ch. 11-12"],["Oxtoby","Ch. 15"],["Brown (LeMay)","Ch. 16-17"]],
+      vocab: ["pH","Brønsted-Lowry","Ka / Kb","Buffer","Titration","Conjugate pair","Henderson-Hasselbalch"],
+      links: [["Khan — Acids & bases","https://www.khanacademy.org/science/chemistry/acids-and-bases-topic"]],
+      submods: [
+        { t: "Brønsted-Lowry acids & bases", sec: "Chem. Principles §11", links: [["Khan — Brønsted-Lowry","https://www.khanacademy.org/science/chemistry/acids-and-bases-topic"],["LibreTexts — Acid-base definitions","https://chem.libretexts.org/Bookshelves/General_Chemistry"]] },
+        { t: "pH, pOH & the autoionization of water", sec: "Chem. Principles §11", links: [["Khan — pH & pOH","https://www.khanacademy.org/science/chemistry/acids-and-bases-topic"]] },
+        { t: "Weak acids/bases: Ka & Kb", sec: "Chem. Principles §11", links: [["Khan — Weak acid/base equilibria","https://www.khanacademy.org/science/chemistry/acids-and-bases-topic"]] },
+        { t: "Buffers & the Henderson-Hasselbalch equation", sec: "Chem. Principles §12", links: [["Khan — Buffers","https://www.khanacademy.org/science/chemistry/acids-and-bases-topic"]] },
+        { t: "Acid-base titrations", sec: "Chem. Principles §12", links: [["Khan — Titrations","https://www.khanacademy.org/science/chemistry/acids-and-bases-topic"],["LibreTexts — Titration curves","https://chem.libretexts.org/Bookshelves/Analytical_Chemistry"]] }
+      ] },
+    { id: "ch-electro", title: "Electrochemistry",
+      chap: [["Chem. Principles","Ch. 13"],["Atkins (Phys. Chem.)","Topic 6C-6D, 19D"],["Brown (LeMay)","Ch. 20"]],
+      vocab: ["Redox","Oxidation state","Galvanic cell","Cell potential","Nernst equation","Electrolysis","Faraday"],
+      links: [["Khan — Redox & electrochemistry","https://www.khanacademy.org/science/chemistry/oxidation-reduction"]],
+      submods: [
+        { t: "Oxidation states & balancing redox", sec: "Chem. Principles §13", links: [["Khan — Oxidation-reduction","https://www.khanacademy.org/science/chemistry/oxidation-reduction"]] },
+        { t: "Galvanic (voltaic) cells", sec: "Chem. Principles §13; Atkins Topic 6C", links: [["Khan — Galvanic cells","https://www.khanacademy.org/science/chemistry/oxidation-reduction"],["LibreTexts — Galvanic cells","https://chem.libretexts.org/Bookshelves/Analytical_Chemistry"]] },
+        { t: "Standard cell potentials", sec: "Chem. Principles §13; Atkins Topic 6D", links: [["Khan — Standard cell potential","https://www.khanacademy.org/science/chemistry/oxidation-reduction"]] },
+        { t: "The Nernst equation", sec: "Chem. Principles §13; Atkins Topic 6C.3", links: [["LibreTexts — Nernst equation","https://chem.libretexts.org/Bookshelves/Analytical_Chemistry"]] },
+        { t: "Electrolysis & Faraday's laws", sec: "Chem. Principles §13; Atkins Topic 19D", links: [["Khan — Electrolysis","https://www.khanacademy.org/science/chemistry/oxidation-reduction"]] }
+      ] },
+    { id: "ch-kinetics", title: "Chemical Kinetics",
+      chap: [["Chem. Principles","Ch. 14"],["Atkins (Phys. Chem.)","Topic 17A-17E"],["Brown (LeMay)","Ch. 14"]],
+      vocab: ["Reaction rate","Rate law","Order of reaction","Rate constant","Activation energy","Arrhenius equation","Catalyst"],
+      links: [["Khan — Kinetics","https://www.khanacademy.org/science/chemistry/chem-kinetics"]],
+      submods: [
+        { t: "Reaction rates", sec: "Chem. Principles §14; Atkins Topic 17A", links: [["Khan — Reaction rates","https://www.khanacademy.org/science/chemistry/chem-kinetics"]] },
+        { t: "Rate laws & reaction order", sec: "Chem. Principles §14; Atkins Topic 17A.2", links: [["Khan — Rate laws","https://www.khanacademy.org/science/chemistry/chem-kinetics"]] },
+        { t: "Integrated rate laws & half-life", sec: "Chem. Principles §14; Atkins Topic 17B", links: [["Khan — Integrated rate laws","https://www.khanacademy.org/science/chemistry/chem-kinetics"],["LibreTexts — Integrated rate laws","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Arrhenius equation & activation energy", sec: "Chem. Principles §14; Atkins Topic 17D", links: [["Khan — Arrhenius equation","https://www.khanacademy.org/science/chemistry/chem-kinetics"]] },
+        { t: "Reaction mechanisms & catalysis", sec: "Chem. Principles §14; Atkins Topic 17E", links: [["Khan — Reaction mechanisms","https://www.khanacademy.org/science/chemistry/chem-kinetics"]] }
+      ] }
+  ]
+});
+CURRICULUM.push({
+  id: "thermo", name: "Thermodynamics", icon: "🔥", color: "#e8743b",
+  source: "Atkins & de Paula — Atkins' Physical Chemistry (11th ed.)",
+  units: [
+    { id: "th-gases", title: "The Properties of Gases",
+      chap: [["Atkins (Phys. Chem.)","Focus 1"],["Levine","Ch. 1"],["McQuarrie","Ch. 1-2"]],
+      vocab: ["Equation of state","Perfect gas","Compression factor","Van der Waals","Critical constants","Partial pressure"],
+      links: [["LibreTexts — Physical Chemistry maps","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"],["MIT 5.60 Thermodynamics & Kinetics","https://ocw.mit.edu/courses/5-60-thermodynamics-kinetics-spring-2008/"]],
+      submods: [
+        { t: "Variables of state; the perfect gas law", sec: "Atkins Topic 1A", links: [["LibreTexts — Ideal gas law","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"],["HyperPhysics — Ideal gas","http://hyperphysics.phy-astr.gsu.edu/hbase/kinetic/idegas.html"]] },
+        { t: "Mixtures of gases & partial pressures", sec: "Atkins Topic 1A.2", links: [["LibreTexts — Dalton's law","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "The kinetic model & Maxwell-Boltzmann speeds", sec: "Atkins Topic 1B", links: [["HyperPhysics — Kinetic theory","http://hyperphysics.phy-astr.gsu.edu/hbase/kinetic/kintem.html"],["LibreTexts — Maxwell-Boltzmann","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Real gases & the compression factor", sec: "Atkins Topic 1C.1", links: [["LibreTexts — Real gases","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "The van der Waals equation", sec: "Atkins Topic 1C.2", links: [["LibreTexts — van der Waals equation","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Critical constants & corresponding states", sec: "Atkins Topic 1C.2", links: [["LibreTexts — Critical constants","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] }
+      ] },
+    { id: "th-first", title: "The First Law",
+      chap: [["Atkins (Phys. Chem.)","Focus 2"],["Levine","Ch. 2"],["Giancoli","Ch. 15"]],
+      vocab: ["Internal energy","Work","Heat","Enthalpy","Heat capacity","State function","Hess's law"],
+      links: [["MIT 5.60 — First law","https://ocw.mit.edu/courses/5-60-thermodynamics-kinetics-spring-2008/"]],
+      submods: [
+        { t: "Work, heat, energy & internal energy", sec: "Atkins Topic 2A", links: [["Khan — First law of thermodynamics","https://www.khanacademy.org/science/physics/thermodynamics"],["HyperPhysics — First law","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/firlaw.html"]] },
+        { t: "Expansion work (reversible & irreversible)", sec: "Atkins Topic 2A.3", links: [["LibreTexts — Expansion work","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Enthalpy & heat capacity", sec: "Atkins Topic 2B", links: [["HyperPhysics — Enthalpy","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/enthalpy.html"],["LibreTexts — Enthalpy","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Thermochemistry; standard enthalpies & Hess's law", sec: "Atkins Topic 2C", links: [["Khan — Hess's law","https://www.khanacademy.org/science/chemistry/thermodynamics-chemistry"],["LibreTexts — Hess's law","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "State functions; the Joule-Thomson effect", sec: "Atkins Topic 2D", links: [["LibreTexts — Joule-Thomson effect","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Adiabatic changes", sec: "Atkins Topic 2E", links: [["LibreTexts — Adiabatic changes","https://chem.libretexts.org/Courses/Grinnell_College/CHM_363:_Physical_Chemistry_1_(Grinnell_College)/06:_The_First_Law/6.05:_Adiabatic_Changes"]] }
+      ] },
+    { id: "th-second", title: "The Second & Third Laws",
+      chap: [["Atkins (Phys. Chem.)","Focus 3"],["Levine","Ch. 3"],["Giancoli","Ch. 15"]],
+      vocab: ["Entropy","Spontaneity","Carnot cycle","Gibbs energy","Helmholtz energy","Third law","Clausius inequality"],
+      links: [["HyperPhysics — Entropy","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/entrop.html"]],
+      submods: [
+        { t: "Entropy & the Second Law", sec: "Atkins Topic 3A", links: [["Khan — Entropy & the second law","https://www.khanacademy.org/science/physics/thermodynamics"],["HyperPhysics — Second law","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/seclaw.html"]] },
+        { t: "The Carnot cycle & thermodynamic temperature", sec: "Atkins Topic 3A.3", links: [["HyperPhysics — Carnot cycle","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/carnot.html"]] },
+        { t: "Entropy changes: expansion, phase, heating", sec: "Atkins Topic 3B", links: [["LibreTexts — Entropy changes","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Measuring entropy & the Third Law", sec: "Atkins Topic 3C", links: [["LibreTexts — Third law of thermodynamics","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Helmholtz & Gibbs energies", sec: "Atkins Topic 3D", links: [["Khan — Gibbs free energy","https://www.khanacademy.org/science/chemistry/thermodynamics-chemistry"],["LibreTexts — Gibbs energy","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Combining First & Second laws; Maxwell relations", sec: "Atkins Topic 3E", links: [["LibreTexts — Maxwell relations","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] }
+      ] },
+    { id: "th-phase", title: "Physical Transformations of Pure Substances",
+      chap: [["Atkins (Phys. Chem.)","Focus 4"],["Levine","Ch. 7"],["McQuarrie","Ch. 23"]],
+      vocab: ["Phase diagram","Chemical potential","Clausius-Clapeyron","Triple point","Critical point","Phase rule"],
+      links: [["LibreTexts — Phase equilibria","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]],
+      submods: [
+        { t: "Phase diagrams of pure substances", sec: "Atkins Topic 4A", links: [["Khan — Phase diagrams","https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces"],["LibreTexts — Phase diagrams","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Phase stability & chemical potential", sec: "Atkins Topic 4A.1", links: [["LibreTexts — Chemical potential","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Phase boundaries & the phase rule", sec: "Atkins Topic 4A.2", links: [["LibreTexts — Gibbs phase rule","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "The Clapeyron equation", sec: "Atkins Topic 4B.2", links: [["LibreTexts — Clapeyron equation","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "The Clausius-Clapeyron equation", sec: "Atkins Topic 4B.2", links: [["LibreTexts — Clausius-Clapeyron","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] }
+      ] },
+    { id: "th-mixtures", title: "Simple Mixtures & Solutions",
+      chap: [["Atkins (Phys. Chem.)","Focus 5"],["Levine","Ch. 9"],["McQuarrie","Ch. 24-25"]],
+      vocab: ["Partial molar quantity","Raoult's law","Henry's law","Activity","Colligative properties","Ideal solution"],
+      links: [["MIT 5.60 — Solutions","https://ocw.mit.edu/courses/5-60-thermodynamics-kinetics-spring-2008/"]],
+      submods: [
+        { t: "Partial molar quantities", sec: "Atkins Topic 5A.1", links: [["LibreTexts — Partial molar quantities","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "The thermodynamics of mixing", sec: "Atkins Topic 5A.2", links: [["LibreTexts — Gibbs energy of mixing","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Ideal & ideal-dilute solutions (Raoult & Henry)", sec: "Atkins Topic 5A.3", links: [["Khan — Raoult's law","https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces"],["LibreTexts — Raoult & Henry","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Colligative properties", sec: "Atkins Topic 5B.2", links: [["Khan — Colligative properties","https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces"]] },
+        { t: "Activities & real solutions", sec: "Atkins Topic 5F", links: [["LibreTexts — Activity & activity coefficients","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] }
+      ] },
+    { id: "th-chemeq", title: "Chemical Equilibrium (Thermodynamic)",
+      chap: [["Atkins (Phys. Chem.)","Focus 6"],["Levine","Ch. 6, 11"],["McQuarrie","Ch. 26"]],
+      vocab: ["Reaction Gibbs energy","Equilibrium constant","ΔG°","Van 't Hoff equation","Coupling","Standard state"],
+      links: [["Khan — Free energy & equilibrium","https://www.khanacademy.org/science/chemistry/thermodynamics-chemistry"]],
+      submods: [
+        { t: "Reaction Gibbs energy & the equilibrium constant", sec: "Atkins Topic 6A", links: [["Khan — Gibbs free energy & equilibrium","https://www.khanacademy.org/science/chemistry/thermodynamics-chemistry"],["LibreTexts — ΔG and K","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "The relation ΔG° = −RT ln K", sec: "Atkins Topic 6A.2", links: [["LibreTexts — ΔG° = −RT ln K","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Response of equilibria to pressure & temperature", sec: "Atkins Topic 6B", links: [["LibreTexts — Response of equilibria","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "The van 't Hoff equation", sec: "Atkins Topic 6B.2", links: [["LibreTexts — van 't Hoff equation","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Electrochemical cells & coupled reactions", sec: "Atkins Topic 6C", links: [["LibreTexts — Electrochemical thermodynamics","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] }
+      ] },
+    { id: "th-statmech", title: "Statistical Thermodynamics",
+      chap: [["Atkins (Phys. Chem.)","Focus 13"],["McQuarrie","Ch. 17-18"],["Levine","Ch. 21-22"]],
+      vocab: ["Partition function","Boltzmann distribution","Microstate","Ensemble","Configurational entropy","Equipartition"],
+      links: [["MIT 5.60 — Statistical mechanics","https://ocw.mit.edu/courses/5-60-thermodynamics-kinetics-spring-2008/"]],
+      submods: [
+        { t: "The Boltzmann distribution", sec: "Atkins Topic 13A", links: [["LibreTexts — Boltzmann distribution","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"],["HyperPhysics — Boltzmann distribution","http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/disfcn.html"]] },
+        { t: "The molecular partition function", sec: "Atkins Topic 13B", links: [["LibreTexts — Partition functions","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Molecular energies from partition functions", sec: "Atkins Topic 13C", links: [["LibreTexts — Mean molecular energies","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "The canonical ensemble", sec: "Atkins Topic 13D", links: [["LibreTexts — Canonical ensemble","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] },
+        { t: "Internal energy & entropy from q", sec: "Atkins Topic 13E", links: [["LibreTexts — Statistical entropy","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]] }
+      ] }
+  ]
+});
+CURRICULUM.push({
+  id: "cp", name: "Competitive Programming", icon: "💻", color: "#8b5cf6",
+  source: "A2OJ Ladders (Codeforces) + core algorithm topics",
+  units: [
+    { id: "cp-basics", title: "Foundations & I/O Speed",
+      chap: [["A2OJ","Ladder 4 — Div 2 A"],["CP Handbook","Ch. 1"],["USACO Guide","Bronze: Intro"]],
+      vocab: ["Time complexity","Big-O","STL","Fast I/O","Ad hoc","Implementation"],
+      links: [["Competitive Programmer's Handbook (PDF)","https://cses.fi/book/book.pdf"],["A2OJ Ladder 4 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder4.html"]],
+      submods: [
+        { t: "Language setup & fast I/O", sec: "USACO Bronze", links: [["USACO Guide — Fast I/O","https://usaco.guide/general/fast-io"],["USACO Guide — Getting started","https://usaco.guide/general/"]] },
+        { t: "Big-O & complexity analysis", sec: "CP Handbook Ch. 2", links: [["USACO Guide — Time complexity","https://usaco.guide/bronze/time-comp"],["cp-algorithms — Complexity","https://cp-algorithms.com/"]] },
+        { t: "STL containers (vector, map, set)", sec: "CP Handbook Ch. 4", links: [["USACO Guide — Intro to data structures","https://usaco.guide/bronze/intro-ds"]] },
+        { t: "Ad hoc & implementation problems", sec: "A2OJ L4 (Div 2 A)", links: [["Codeforces — Problemset","https://codeforces.com/problemset"]] },
+        { t: "A2OJ Ladder 4 (Div 2 A) — first 20 problems", sec: "A2OJ Ladder 4", links: [["A2OJ Ladder 4 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder4.html"]] }
+      ] },
+    { id: "cp-math", title: "Number Theory & Math",
+      chap: [["A2OJ","Topic: Math / Number Theory"],["cp-algorithms","Algebra"],["CP Handbook","Ch. 21"]],
+      vocab: ["GCD/LCM","Modular arithmetic","Sieve of Eratosthenes","Modular inverse","Fermat's little theorem","Combinatorics"],
+      links: [["cp-algorithms — Algebra","https://cp-algorithms.com/algebra/binary-exp.html"]],
+      submods: [
+        { t: "GCD, LCM & the Euclidean algorithm", sec: "cp-algorithms: Algebra", links: [["cp-algorithms — Euclidean algorithm","https://cp-algorithms.com/algebra/euclid-algorithm.html"],["USACO Guide — Divisibility","https://usaco.guide/gold/divisibility"]] },
+        { t: "Modular arithmetic & fast exponentiation", sec: "cp-algorithms: Algebra", links: [["cp-algorithms — Binary exponentiation","https://cp-algorithms.com/algebra/binary-exp.html"]] },
+        { t: "Sieve of Eratosthenes & primes", sec: "cp-algorithms: Algebra", links: [["cp-algorithms — Sieve of Eratosthenes","https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html"]] },
+        { t: "Modular inverse & Fermat's little theorem", sec: "cp-algorithms: Algebra", links: [["cp-algorithms — Modular inverse","https://cp-algorithms.com/algebra/module-inverse.html"]] },
+        { t: "Combinatorics & binomial coefficients", sec: "cp-algorithms: Combinatorics", links: [["cp-algorithms — Binomial coefficients","https://cp-algorithms.com/combinatorics/binomial-coefficients.html"]] }
+      ] },
+    { id: "cp-sorting", title: "Sorting, Searching & Two Pointers",
+      chap: [["A2OJ","Ladder 5 — Div 2 B"],["cp-algorithms","Searching"],["USACO Guide","Silver"]],
+      vocab: ["Binary search","Two pointers","Sliding window","Prefix sums","Sort by key","Greedy"],
+      links: [["USACO Guide — Silver","https://usaco.guide/silver/"]],
+      submods: [
+        { t: "Custom comparators & sorting", sec: "USACO Silver", links: [["USACO Guide — Sorting & comparators","https://usaco.guide/silver/sorting-custom"]] },
+        { t: "Binary search on arrays", sec: "cp-algorithms: Searching", links: [["cp-algorithms — Binary search","https://cp-algorithms.com/num_methods/binary_search.html"],["USACO Guide — Binary search","https://usaco.guide/silver/binary-search"]] },
+        { t: "Binary search on the answer", sec: "USACO Silver", links: [["USACO Guide — Binary search on answer","https://usaco.guide/silver/binary-search"]] },
+        { t: "Two pointers & sliding window", sec: "USACO Silver", links: [["USACO Guide — Two pointers","https://usaco.guide/silver/two-pointers"]] },
+        { t: "Prefix sums & difference arrays", sec: "USACO Silver", links: [["USACO Guide — Prefix sums","https://usaco.guide/silver/prefix-sums"]] }
+      ] },
+    { id: "cp-ds", title: "Data Structures",
+      chap: [["A2OJ","Ladder 6 — Div 2 C"],["cp-algorithms","Data Structures"],["USACO Guide","Gold"]],
+      vocab: ["Stack","Queue","Priority queue","Segment tree","Fenwick tree (BIT)","Disjoint set union","Sparse table"],
+      links: [["cp-algorithms — Data structures","https://cp-algorithms.com/data_structures/segment_tree.html"]],
+      submods: [
+        { t: "Stacks, queues & monotonic stacks", sec: "USACO Gold", links: [["USACO Guide — Stacks & queues","https://usaco.guide/gold/stacks"]] },
+        { t: "Priority queues & heaps", sec: "USACO Silver/Gold", links: [["USACO Guide — Priority queues","https://usaco.guide/silver/priority-queues"]] },
+        { t: "Disjoint Set Union (Union-Find)", sec: "cp-algorithms: DS", links: [["cp-algorithms — DSU","https://cp-algorithms.com/data_structures/disjoint_set_union.html"],["USACO Guide — DSU","https://usaco.guide/gold/dsu"]] },
+        { t: "Fenwick / Binary Indexed Tree", sec: "cp-algorithms: DS", links: [["cp-algorithms — Fenwick tree","https://cp-algorithms.com/data_structures/fenwick.html"],["USACO Guide — Point update range sum","https://usaco.guide/gold/PURS"]] },
+        { t: "Segment trees (point & range)", sec: "cp-algorithms: DS", links: [["cp-algorithms — Segment tree","https://cp-algorithms.com/data_structures/segment_tree.html"]] }
+      ] },
+    { id: "cp-graphs", title: "Graph Algorithms",
+      chap: [["A2OJ","Topic: Graphs"],["cp-algorithms","Graph"],["USACO Guide","Silver/Gold"]],
+      vocab: ["BFS","DFS","Dijkstra","Topological sort","MST","Bellman-Ford","Floyd-Warshall","Connected components"],
+      links: [["cp-algorithms — Graph algorithms","https://cp-algorithms.com/graph/breadth-first-search.html"]],
+      submods: [
+        { t: "Graph representation & traversal (BFS/DFS)", sec: "cp-algorithms: Graph", links: [["cp-algorithms — BFS","https://cp-algorithms.com/graph/breadth-first-search.html"],["USACO Guide — Graph traversal","https://usaco.guide/silver/graph-traversal"]] },
+        { t: "Connected components & flood fill", sec: "USACO Silver", links: [["USACO Guide — Flood fill","https://usaco.guide/silver/flood-fill"]] },
+        { t: "Topological sort", sec: "cp-algorithms: Graph", links: [["cp-algorithms — Topological sort","https://cp-algorithms.com/graph/topological-sort.html"],["USACO Guide — Topological sort","https://usaco.guide/gold/toposort"]] },
+        { t: "Shortest paths (Dijkstra, Bellman-Ford)", sec: "cp-algorithms: Graph", links: [["cp-algorithms — Dijkstra","https://cp-algorithms.com/graph/dijkstra.html"],["USACO Guide — Shortest paths","https://usaco.guide/gold/shortest-paths"]] },
+        { t: "Minimum spanning tree (Kruskal, Prim)", sec: "cp-algorithms: Graph", links: [["cp-algorithms — MST (Kruskal)","https://cp-algorithms.com/graph/mst_kruskal.html"],["USACO Guide — MST","https://usaco.guide/gold/mst"]] }
+      ] },
+    { id: "cp-dp", title: "Dynamic Programming",
+      chap: [["A2OJ","Ladder 7 — Div 2 D"],["cp-algorithms","Dynamic Programming"],["USACO Guide","Gold: DP"]],
+      vocab: ["Memoization","Tabulation","Knapsack","LIS","LCS","Bitmask DP","DP on trees","State transition"],
+      links: [["AtCoder Educational DP Contest","https://atcoder.jp/contests/dp"]],
+      submods: [
+        { t: "Intro to DP: memoization vs tabulation", sec: "cp-algorithms / USACO Gold", links: [["cp-algorithms — Intro to DP","https://cp-algorithms.com/dynamic_programming/intro-to-dp.html"],["USACO Guide — Intro to DP","https://usaco.guide/gold/intro-dp"]] },
+        { t: "Knapsack variants", sec: "USACO Gold", links: [["USACO Guide — Knapsack DP","https://usaco.guide/gold/knapsack"]] },
+        { t: "Longest increasing / common subsequence", sec: "cp-algorithms: Sequences", links: [["cp-algorithms — Longest increasing subsequence","https://cp-algorithms.com/sequences/longest_increasing_subsequence.html"]] },
+        { t: "DP on grids & intervals", sec: "USACO Gold", links: [["USACO Guide — Paths on grids","https://usaco.guide/gold/paths-grids"]] },
+        { t: "Bitmask DP", sec: "USACO Gold/Platinum", links: [["USACO Guide — Bitmask DP","https://usaco.guide/gold/dp-bitmasks"]] },
+        { t: "DP on trees", sec: "USACO Gold", links: [["USACO Guide — Tree DP","https://usaco.guide/gold/dp-trees"]] }
+      ] },
+    { id: "cp-strings", title: "String Algorithms",
+      chap: [["A2OJ","Topic: Strings"],["cp-algorithms","String Processing"],["CP Handbook","Ch. 26"]],
+      vocab: ["Hashing","KMP","Z-function","Trie","Suffix array","Prefix function","Rolling hash"],
+      links: [["cp-algorithms — String processing","https://cp-algorithms.com/string/prefix-function.html"]],
+      submods: [
+        { t: "String hashing & rolling hash", sec: "cp-algorithms: Strings", links: [["cp-algorithms — String hashing","https://cp-algorithms.com/string/string-hashing.html"],["USACO Guide — String hashing","https://usaco.guide/gold/string-hashing"]] },
+        { t: "Prefix function (KMP)", sec: "cp-algorithms: Strings", links: [["cp-algorithms — Prefix function (KMP)","https://cp-algorithms.com/string/prefix-function.html"]] },
+        { t: "Z-function", sec: "cp-algorithms: Strings", links: [["cp-algorithms — Z-function","https://cp-algorithms.com/string/z-function.html"]] },
+        { t: "Tries", sec: "USACO Gold/Platinum", links: [["USACO Guide — Tries","https://usaco.guide/adv/tries"]] },
+        { t: "Suffix arrays (intro)", sec: "cp-algorithms: Strings", links: [["cp-algorithms — Suffix array","https://cp-algorithms.com/string/suffix-array.html"]] }
+      ] },
+    { id: "cp-ladder11", title: "Rating Ladder: Codeforces < 1300",
+      chap: [["A2OJ","Ladder 11 (100 problems)"],["USACO Guide","Bronze→Silver"]],
+      vocab: ["Greedy","Brute force","Constructive","Simulation","Sorting","Observation"],
+      links: [["A2OJ Ladder 11 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder11.html"],["Codeforces EDU","https://codeforces.com/edu/courses"]],
+      submods: [
+        { t: "Problems 1-20", sec: "A2OJ Ladder 11", links: [["A2OJ Ladder 11 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder11.html"]] },
+        { t: "Problems 21-40", sec: "A2OJ Ladder 11", links: [["Codeforces — Problemset","https://codeforces.com/problemset"]] },
+        { t: "Problems 41-60", sec: "A2OJ Ladder 11", links: [["Codeforces — Problemset","https://codeforces.com/problemset"]] },
+        { t: "Problems 61-80", sec: "A2OJ Ladder 11", links: [["Codeforces — Problemset","https://codeforces.com/problemset"]] },
+        { t: "Problems 81-100", sec: "A2OJ Ladder 11", links: [["Codeforces — Problemset","https://codeforces.com/problemset"]] }
+      ] },
+    { id: "cp-ladder1399", title: "Rating Ladder: 1300-1399",
+      chap: [["A2OJ","Ladder 12 (100 problems)"],["USACO Guide","Silver"]],
+      vocab: ["Two pointers","Binary search","Greedy proof","Number theory","Prefix sums"],
+      links: [["A2OJ Ladder 12 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder12.html"]],
+      submods: [
+        { t: "Problems 1-20", sec: "A2OJ Ladder 12", links: [["A2OJ Ladder 12 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder12.html"]] },
+        { t: "Problems 21-40", sec: "A2OJ Ladder 12", links: [["Codeforces — By rating","https://codeforces.com/problemset?order=BY_RATING_ASC"]] },
+        { t: "Problems 41-60", sec: "A2OJ Ladder 12", links: [["Codeforces — By rating","https://codeforces.com/problemset?order=BY_RATING_ASC"]] },
+        { t: "Problems 61-80", sec: "A2OJ Ladder 12", links: [["Codeforces — By rating","https://codeforces.com/problemset?order=BY_RATING_ASC"]] },
+        { t: "Problems 81-100", sec: "A2OJ Ladder 12", links: [["Codeforces — By rating","https://codeforces.com/problemset?order=BY_RATING_ASC"]] }
+      ] },
+    { id: "cp-ladder1599", title: "Rating Ladder: 1400-1599",
+      chap: [["A2OJ","Ladders 13-14 (200 problems)"],["USACO Guide","Gold"]],
+      vocab: ["DP","Graphs","Data structures","Bitmasking","Math-heavy","Implementation-heavy"],
+      links: [["A2OJ Ladder 13 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder13.html"],["A2OJ Ladder 14 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder14.html"]],
+      submods: [
+        { t: "Ladder 13 — first half", sec: "A2OJ Ladder 13", links: [["A2OJ Ladder 13 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder13.html"]] },
+        { t: "Ladder 13 — second half", sec: "A2OJ Ladder 13", links: [["A2OJ Ladder 13 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder13.html"]] },
+        { t: "Ladder 14 — first half", sec: "A2OJ Ladder 14", links: [["A2OJ Ladder 14 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder14.html"]] },
+        { t: "Ladder 14 — second half", sec: "A2OJ Ladder 14", links: [["A2OJ Ladder 14 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder14.html"]] },
+        { t: "Editorial review & upsolving", sec: "Codeforces", links: [["Codeforces — Recent actions / editorials","https://codeforces.com/"]] }
+      ] }
+  ]
+});
+// <<DATA>>  (subject push() calls are inserted above this marker)
+</script>
 
 <script>
 "use strict";
 /* ============================================================
-   LUMEN — single-file spaced-repetition learning tracker
-   Subjects → Units → Submodules, all state in localStorage.
-   Curriculum seeded from real textbook / ladder structures.
+   LUMEN — spaced-repetition learning tracker (logic)
    ============================================================ */
-
-/* ---------- Curriculum data ----------
-   Each unit: { id, title, chap (multi-textbook mapping array),
-                vocab[], links[], submods[] } */
-const CURRICULUM = [
-  {
-    id: "physics", name: "Physics", icon: "🪐", color: "#5b8def",
-    source: "Giancoli — Physics: Principles with Applications",
-    units: [
-      {
-        id: "ph-measure", title: "Introduction & Measurement",
-        chap: [["Giancoli","Ch. 1"],["Halliday/Resnick","Ch. 1"],["Serway/Vuille","Ch. 1"]],
-        vocab: ["Significant figures","SI units","Dimensional analysis","Order of magnitude","Uncertainty","Scientific notation"],
-        links: [
-          ["Khan Academy — Units & measurement","https://www.khanacademy.org/science/physics/one-dimensional-motion"],
-          ["HyperPhysics — Units","http://hyperphysics.phy-astr.gsu.edu/hbase/units.html"],
-          ["NIST — SI units reference","https://www.nist.gov/pml/owm/metric-si/si-units"]
-        ],
-        submods: ["Significant figures & precision","SI base & derived units","Unit conversion & dimensional analysis","Order-of-magnitude estimation","Measurement uncertainty"]
-      },
-      {
-        id: "ph-kin1d", title: "Kinematics in One Dimension",
-        chap: [["Giancoli","Ch. 2"],["Halliday/Resnick","Ch. 2"],["Serway/Vuille","Ch. 2"]],
-        vocab: ["Displacement","Velocity","Acceleration","Free fall","Kinematic equations","Instantaneous velocity"],
-        links: [
-          ["Khan Academy — One-dimensional motion","https://www.khanacademy.org/science/physics/one-dimensional-motion"],
-          ["HyperPhysics — Motion","http://hyperphysics.phy-astr.gsu.edu/hbase/mot.html"],
-          ["MIT 8.01 Classical Mechanics","https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/"]
-        ],
-        submods: ["Distance vs. displacement","Average vs. instantaneous velocity","Acceleration","Kinematic equations (constant a)","Free fall & gravity","Velocity-time graphs"]
-      },
-      {
-        id: "ph-kin2d", title: "Kinematics in Two Dimensions & Vectors",
-        chap: [["Giancoli","Ch. 3"],["Halliday/Resnick","Ch. 4"],["Serway/Vuille","Ch. 3"]],
-        vocab: ["Vector","Scalar","Projectile motion","Components","Relative velocity","Resultant"],
-        links: [
-          ["Khan Academy — Two-dimensional motion","https://www.khanacademy.org/science/physics/two-dimensional-motion"],
-          ["HyperPhysics — Vectors","http://hyperphysics.phy-astr.gsu.edu/hbase/vect.html"]
-        ],
-        submods: ["Vector addition & components","Unit vectors","Projectile motion","Range & trajectory","Relative velocity"]
-      },
-      {
-        id: "ph-newton", title: "Dynamics: Newton's Laws of Motion",
-        chap: [["Giancoli","Ch. 4"],["Halliday/Resnick","Ch. 5"],["Serway/Vuille","Ch. 4"]],
-        vocab: ["Force","Inertia","Mass","Friction","Normal force","Free-body diagram","Tension"],
-        links: [
-          ["Khan Academy — Forces & Newton's laws","https://www.khanacademy.org/science/physics/forces-newtons-laws"],
-          ["MIT 8.01 — Newton's laws","https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/"],
-          ["HyperPhysics — Newton's laws","http://hyperphysics.phy-astr.gsu.edu/hbase/newt.html"]
-        ],
-        submods: ["Newton's first law (inertia)","Newton's second law (F = ma)","Newton's third law","Free-body diagrams","Friction (static & kinetic)","Tension & connected objects"]
-      },
-      {
-        id: "ph-circ", title: "Circular Motion & Gravitation",
-        chap: [["Giancoli","Ch. 5"],["Halliday/Resnick","Ch. 13"],["Serway/Vuille","Ch. 7"]],
-        vocab: ["Centripetal acceleration","Centripetal force","Universal gravitation","Orbital velocity","Kepler's laws"],
-        links: [
-          ["Khan Academy — Centripetal force & gravitation","https://www.khanacademy.org/science/physics/centripetal-force-and-gravitation"],
-          ["HyperPhysics — Gravity","http://hyperphysics.phy-astr.gsu.edu/hbase/grav.html"]
-        ],
-        submods: ["Uniform circular motion","Centripetal acceleration & force","Newton's law of universal gravitation","Satellites & orbits","Kepler's laws"]
-      },
-      {
-        id: "ph-energy", title: "Work & Energy",
-        chap: [["Giancoli","Ch. 6"],["Halliday/Resnick","Ch. 7–8"],["Serway/Vuille","Ch. 5"]],
-        vocab: ["Work","Kinetic energy","Potential energy","Conservation of energy","Power","Work-energy theorem"],
-        links: [
-          ["Khan Academy — Work & energy","https://www.khanacademy.org/science/physics/work-and-energy"],
-          ["HyperPhysics — Work & energy","http://hyperphysics.phy-astr.gsu.edu/hbase/work.html"]
-        ],
-        submods: ["Work done by a constant force","Work-energy theorem","Kinetic & potential energy","Conservation of mechanical energy","Power"]
-      },
-      {
-        id: "ph-momentum", title: "Linear Momentum & Collisions",
-        chap: [["Giancoli","Ch. 7"],["Halliday/Resnick","Ch. 9"],["Serway/Vuille","Ch. 6"]],
-        vocab: ["Momentum","Impulse","Conservation of momentum","Elastic collision","Inelastic collision","Center of mass"],
-        links: [
-          ["Khan Academy — Impulse & momentum","https://www.khanacademy.org/science/physics/linear-momentum"],
-          ["HyperPhysics — Momentum","http://hyperphysics.phy-astr.gsu.edu/hbase/mom.html"]
-        ],
-        submods: ["Momentum & impulse","Conservation of momentum","Elastic collisions","Inelastic collisions","Center of mass"]
-      },
-      {
-        id: "ph-rot", title: "Rotational Motion",
-        chap: [["Giancoli","Ch. 8"],["Halliday/Resnick","Ch. 10–11"],["Serway/Vuille","Ch. 8"]],
-        vocab: ["Torque","Angular velocity","Moment of inertia","Angular momentum","Rotational kinetic energy"],
-        links: [
-          ["Khan Academy — Torque & angular momentum","https://www.khanacademy.org/science/physics/torque-angular-momentum"],
-          ["HyperPhysics — Rotation","http://hyperphysics.phy-astr.gsu.edu/hbase/rotq.html"]
-        ],
-        submods: ["Angular quantities","Torque","Moment of inertia","Rotational dynamics","Angular momentum & its conservation"]
-      },
-      {
-        id: "ph-statics", title: "Static Equilibrium, Elasticity & Fluids",
-        chap: [["Giancoli","Ch. 9–10"],["Halliday/Resnick","Ch. 12, 14"],["Serway/Vuille","Ch. 8–9"]],
-        vocab: ["Equilibrium","Stress","Strain","Young's modulus","Pressure","Buoyancy","Bernoulli's principle"],
-        links: [
-          ["Khan Academy — Fluids","https://www.khanacademy.org/science/physics/fluids"],
-          ["HyperPhysics — Fluids","http://hyperphysics.phy-astr.gsu.edu/hbase/pflu.html"]
-        ],
-        submods: ["Conditions for static equilibrium","Stress, strain & elastic moduli","Pressure in fluids","Buoyancy & Archimedes' principle","Fluid flow & Bernoulli's equation"]
-      },
-      {
-        id: "ph-waves", title: "Vibrations, Waves & Sound",
-        chap: [["Giancoli","Ch. 11–12"],["Halliday/Resnick","Ch. 15–17"],["Serway/Vuille","Ch. 13–14"]],
-        vocab: ["Simple harmonic motion","Amplitude","Resonance","Wavelength","Doppler effect","Standing wave","Interference"],
-        links: [
-          ["Khan Academy — Oscillations & waves","https://www.khanacademy.org/science/physics/mechanical-waves-and-sound"],
-          ["HyperPhysics — Sound","http://hyperphysics.phy-astr.gsu.edu/hbase/sound/soucon.html"]
-        ],
-        submods: ["Simple harmonic motion","Pendulums & springs","Wave properties & types","Standing waves & resonance","Sound intensity & the Doppler effect"]
-      },
-      {
-        id: "ph-thermal", title: "Temperature, Kinetic Theory & Heat",
-        chap: [["Giancoli","Ch. 13–14"],["Atkins (Phys. Chem.)","Focus 1: Gases"],["Halliday/Resnick","Ch. 18–19"]],
-        vocab: ["Temperature","Ideal gas law","Kinetic theory","Specific heat","Latent heat","Heat transfer"],
-        links: [
-          ["Khan Academy — Thermodynamics","https://www.khanacademy.org/science/physics/thermodynamics"],
-          ["HyperPhysics — Heat & thermo","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/thercon.html"]
-        ],
-        submods: ["Temperature & thermal expansion","Ideal gas law","Kinetic theory of gases","Specific & latent heat","Heat transfer: conduction, convection, radiation"]
-      },
-      {
-        id: "ph-thermo", title: "The Laws of Thermodynamics",
-        chap: [["Giancoli","Ch. 15"],["Atkins (Phys. Chem.)","Focus 2–3"],["Halliday/Resnick","Ch. 20"]],
-        vocab: ["First law","Internal energy","Entropy","Second law","Carnot cycle","Heat engine","Efficiency"],
-        links: [
-          ["Khan Academy — Laws of thermodynamics","https://www.khanacademy.org/science/physics/thermodynamics"],
-          ["HyperPhysics — Thermodynamics","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/thermo.html"]
-        ],
-        submods: ["First law of thermodynamics","Thermodynamic processes (isothermal, adiabatic)","Heat engines & efficiency","Second law & entropy","The Carnot cycle"]
-      },
-      {
-        id: "ph-efield", title: "Electric Charge, Field & Potential",
-        chap: [["Giancoli","Ch. 16–17"],["Halliday/Resnick","Ch. 21–24"],["Serway/Vuille","Ch. 15–16"]],
-        vocab: ["Coulomb's law","Electric field","Electric potential","Capacitance","Gauss's law","Voltage"],
-        links: [
-          ["Khan Academy — Electric charge, field & potential","https://www.khanacademy.org/science/physics/electric-charge-electric-force-and-voltage"],
-          ["HyperPhysics — Electricity","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elecur.html"]
-        ],
-        submods: ["Electric charge & Coulomb's law","Electric field","Gauss's law","Electric potential & voltage","Capacitance & capacitors"]
-      },
-      {
-        id: "ph-circuits", title: "Electric Currents & DC Circuits",
-        chap: [["Giancoli","Ch. 18–19"],["Halliday/Resnick","Ch. 26–27"],["Serway/Vuille","Ch. 17–18"]],
-        vocab: ["Current","Resistance","Ohm's law","EMF","Kirchhoff's rules","Series & parallel","RC circuit"],
-        links: [
-          ["Khan Academy — Circuits","https://www.khanacademy.org/science/physics/circuits-topic"],
-          ["HyperPhysics — DC circuits","http://hyperphysics.phy-astr.gsu.edu/hbase/electric/dccircuits.html"]
-        ],
-        submods: ["Current, resistance & Ohm's law","Electric power","Series & parallel resistors","Kirchhoff's rules","EMF & RC circuits"]
-      },
-      {
-        id: "ph-magnet", title: "Magnetism & Electromagnetic Induction",
-        chap: [["Giancoli","Ch. 20–21"],["Halliday/Resnick","Ch. 28–30"],["Serway/Vuille","Ch. 19–20"]],
-        vocab: ["Magnetic field","Lorentz force","Faraday's law","Lenz's law","Inductance","Ampère's law"],
-        links: [
-          ["Khan Academy — Magnetic forces & induction","https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields"],
-          ["HyperPhysics — Magnetism","http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magfie.html"]
-        ],
-        submods: ["Magnetic fields & forces on charges","Magnetic force on currents","Sources of magnetic field (Ampère's law)","Faraday's & Lenz's laws","Inductance & AC basics"]
-      },
-      {
-        id: "ph-optics", title: "Electromagnetic Waves & Optics",
-        chap: [["Giancoli","Ch. 22–25"],["Halliday/Resnick","Ch. 33–36"],["Serway/Vuille","Ch. 21–25"]],
-        vocab: ["Electromagnetic spectrum","Reflection","Refraction","Snell's law","Diffraction","Interference","Lens"],
-        links: [
-          ["Khan Academy — Geometric optics","https://www.khanacademy.org/science/physics/geometric-optics"],
-          ["HyperPhysics — Light & vision","http://hyperphysics.phy-astr.gsu.edu/hbase/ligcon.html"]
-        ],
-        submods: ["Electromagnetic waves & spectrum","Reflection & mirrors","Refraction & Snell's law","Lenses & optical instruments","Wave optics: interference & diffraction"]
-      },
-      {
-        id: "ph-relativity", title: "The Special Theory of Relativity",
-        chap: [["Giancoli","Ch. 26"],["Halliday/Resnick","Ch. 37"],["Serway/Vuille","Ch. 26"]],
-        vocab: ["Time dilation","Length contraction","Lorentz transformation","Mass-energy equivalence","Simultaneity"],
-        links: [
-          ["Khan Academy — Special relativity","https://www.khanacademy.org/science/physics/special-relativity"],
-          ["HyperPhysics — Relativity","http://hyperphysics.phy-astr.gsu.edu/hbase/relativ/srelcon.html"]
-        ],
-        submods: ["Postulates of special relativity","Time dilation","Length contraction","Relativistic momentum & energy (E = mc²)"]
-      },
-      {
-        id: "ph-quantum", title: "Quantum Theory & Atomic Physics",
-        chap: [["Giancoli","Ch. 27–29"],["Atkins (Phys. Chem.)","Focus 7–8"],["Halliday/Resnick","Ch. 38–40"]],
-        vocab: ["Photon","Photoelectric effect","Wave-particle duality","Uncertainty principle","Quantum numbers","Bohr model"],
-        links: [
-          ["Khan Academy — Quantum physics","https://www.khanacademy.org/science/physics/quantum-physics"],
-          ["HyperPhysics — Quantum physics","http://hyperphysics.phy-astr.gsu.edu/hbase/quacon.html"]
-        ],
-        submods: ["Blackbody radiation & the photon","Photoelectric effect","Bohr model of the atom","Wave-particle duality & de Broglie","Quantum mechanics & atomic structure"]
-      },
-      {
-        id: "ph-nuclear", title: "Nuclear & Particle Physics",
-        chap: [["Giancoli","Ch. 30–32"],["Halliday/Resnick","Ch. 42–44"],["Serway/Vuille","Ch. 29–30"]],
-        vocab: ["Radioactivity","Half-life","Fission","Fusion","Binding energy","Standard model","Quark"],
-        links: [
-          ["Khan Academy — Nuclear physics","https://www.khanacademy.org/science/physics/quantum-physics/nuclei"],
-          ["HyperPhysics — Nuclear","http://hyperphysics.phy-astr.gsu.edu/hbase/nuccon.html"]
-        ],
-        submods: ["Nuclear structure & binding energy","Radioactive decay & half-life","Nuclear fission","Nuclear fusion","Elementary particles & the Standard Model"]
-      }
-    ]
-  },
-  {
-    id: "chemistry", name: "Chemistry", icon: "⚗️", color: "#1aa672",
-    source: "Atkins & Jones — Chemical Principles: The Quest for Insight",
-    units: [
-      {
-        id: "ch-fundamentals", title: "Fundamentals: Atoms, Moles & Stoichiometry",
-        chap: [["Atkins (Chem. Principles)","Fundamentals A–L"],["Oxtoby","Ch. 1–2"],["Brown (LeMay)","Ch. 1–3"]],
-        vocab: ["Mole","Avogadro's number","Stoichiometry","Limiting reagent","Empirical formula","Molarity"],
-        links: [
-          ["Khan Academy — Atoms & molecules","https://www.khanacademy.org/science/chemistry/atomic-structure-and-properties"],
-          ["LibreTexts — General Chemistry","https://chem.libretexts.org/Bookshelves/General_Chemistry"]
-        ],
-        submods: ["Matter, elements & compounds","The mole & molar mass","Balancing chemical equations","Stoichiometry & limiting reagents","Solution concentration & molarity"]
-      },
-      {
-        id: "ch-quantum", title: "The Quantum World & Atomic Structure",
-        chap: [["Atkins (Chem. Principles)","Ch. 1–2"],["Oxtoby","Ch. 4–5"],["Brown (LeMay)","Ch. 6"]],
-        vocab: ["Orbital","Quantum number","Electron configuration","Aufbau principle","Periodic trends","Ionization energy"],
-        links: [
-          ["Khan Academy — Electronic structure","https://www.khanacademy.org/science/chemistry/electronic-structure-of-atoms"],
-          ["LibreTexts — Electronic structure","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]
-        ],
-        submods: ["Light, quanta & atomic spectra","Atomic orbitals & quantum numbers","Electron configurations","The periodic table & periodicity","Periodic trends (radius, ionization energy)"]
-      },
-      {
-        id: "ch-bonding", title: "Chemical Bonds & Molecular Structure",
-        chap: [["Atkins (Chem. Principles)","Ch. 3–4"],["Oxtoby","Ch. 6–8"],["Brown (LeMay)","Ch. 8–9"]],
-        vocab: ["Ionic bond","Covalent bond","Lewis structure","VSEPR","Hybridization","Polarity","Electronegativity"],
-        links: [
-          ["Khan Academy — Chemical bonds","https://www.khanacademy.org/science/chemistry/chemical-bonds"],
-          ["LibreTexts — Chemical bonding","https://chem.libretexts.org/Bookshelves/General_Chemistry"]
-        ],
-        submods: ["Ionic bonding","Covalent bonding & Lewis structures","VSEPR & molecular geometry","Valence bond theory & hybridization","Molecular orbital theory"]
-      },
-      {
-        id: "ch-states", title: "Gases, Liquids & Solids",
-        chap: [["Atkins (Chem. Principles)","Ch. 5–6"],["Oxtoby","Ch. 9–10"],["Brown (LeMay)","Ch. 10–12"]],
-        vocab: ["Ideal gas law","Partial pressure","Intermolecular forces","Phase diagram","Crystal lattice","Vapor pressure"],
-        links: [
-          ["Khan Academy — Gases & kinetic theory","https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory"],
-          ["Khan Academy — States of matter","https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces"]
-        ],
-        submods: ["Gas laws & the ideal gas equation","Kinetic molecular theory & real gases","Intermolecular forces","Liquids & phase changes","Solids & crystal structures"]
-      },
-      {
-        id: "ch-equilibrium", title: "Chemical & Physical Equilibria",
-        chap: [["Atkins (Chem. Principles)","Ch. 9–11"],["Oxtoby","Ch. 14"],["Brown (LeMay)","Ch. 15–17"]],
-        vocab: ["Equilibrium constant","Le Chatelier's principle","Reaction quotient","Solubility product","Common ion effect"],
-        links: [
-          ["Khan Academy — Chemical equilibrium","https://www.khanacademy.org/science/chemistry/chemical-equilibrium"],
-          ["LibreTexts — Equilibria","https://chem.libretexts.org/Bookshelves/General_Chemistry"]
-        ],
-        submods: ["The equilibrium constant K","Reaction quotient Q","Le Chatelier's principle","Solubility equilibria (Ksp)","Physical equilibria & phase transitions"]
-      },
-      {
-        id: "ch-acidbase", title: "Acids, Bases & Aqueous Equilibria",
-        chap: [["Atkins (Chem. Principles)","Ch. 11–12"],["Oxtoby","Ch. 15"],["Brown (LeMay)","Ch. 16–17"]],
-        vocab: ["pH","Brønsted-Lowry","Ka / Kb","Buffer","Titration","Conjugate pair","Henderson-Hasselbalch"],
-        links: [
-          ["Khan Academy — Acids & bases","https://www.khanacademy.org/science/chemistry/acids-and-bases-topic"],
-          ["LibreTexts — Acid-base chemistry","https://chem.libretexts.org/Bookshelves/General_Chemistry"]
-        ],
-        submods: ["Brønsted-Lowry acids & bases","pH, pOH & the water equilibrium","Weak acids/bases & Ka, Kb","Buffers & the Henderson-Hasselbalch equation","Acid-base titrations"]
-      },
-      {
-        id: "ch-electro", title: "Electrochemistry",
-        chap: [["Atkins (Chem. Principles)","Ch. 13"],["Oxtoby","Ch. 17"],["Brown (LeMay)","Ch. 20"]],
-        vocab: ["Redox","Oxidation state","Galvanic cell","Cell potential","Nernst equation","Electrolysis","Faraday"],
-        links: [
-          ["Khan Academy — Redox & electrochemistry","https://www.khanacademy.org/science/chemistry/oxidation-reduction"],
-          ["LibreTexts — Electrochemistry","https://chem.libretexts.org/Bookshelves/Analytical_Chemistry"]
-        ],
-        submods: ["Oxidation states & balancing redox","Galvanic (voltaic) cells","Standard cell potentials","The Nernst equation","Electrolysis & Faraday's laws"]
-      },
-      {
-        id: "ch-kinetics", title: "Chemical Kinetics",
-        chap: [["Atkins (Chem. Principles)","Ch. 14"],["Atkins (Phys. Chem.)","Focus 17–18"],["Brown (LeMay)","Ch. 14"]],
-        vocab: ["Reaction rate","Rate law","Order of reaction","Rate constant","Activation energy","Arrhenius equation","Catalyst"],
-        links: [
-          ["Khan Academy — Kinetics","https://www.khanacademy.org/science/chemistry/chem-kinetics"],
-          ["LibreTexts — Kinetics","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"]
-        ],
-        submods: ["Reaction rates","Rate laws & reaction order","Integrated rate laws & half-life","Arrhenius equation & activation energy","Reaction mechanisms & catalysis"]
-      }
-    ]
-  },
-  {
-    id: "thermo", name: "Thermodynamics", icon: "🔥", color: "#e8743b",
-    source: "Atkins & de Paula — Atkins' Physical Chemistry",
-    units: [
-      {
-        id: "th-gases", title: "The Properties of Gases",
-        chap: [["Atkins (Phys. Chem.)","Focus 1"],["Levine","Ch. 1"],["McQuarrie","Ch. 1–2"]],
-        vocab: ["Equation of state","Perfect gas","Compression factor","Van der Waals","Critical constants","Partial pressure"],
-        links: [
-          ["LibreTexts — Physical Chemistry maps","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"],
-          ["MIT 5.60 Thermodynamics & Kinetics","https://ocw.mit.edu/courses/5-60-thermodynamics-kinetics-spring-2008/"]
-        ],
-        submods: ["The perfect gas equation of state","Mixtures & partial pressures","Real gases & the compression factor","The van der Waals equation","Critical constants & corresponding states"]
-      },
-      {
-        id: "th-first", title: "The First Law",
-        chap: [["Atkins (Phys. Chem.)","Focus 2"],["Levine","Ch. 2"],["Giancoli","Ch. 15"]],
-        vocab: ["Internal energy","Work","Heat","Enthalpy","Heat capacity","State function","Hess's law"],
-        links: [
-          ["LibreTexts — The First Law","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"],
-          ["MIT 5.60 — First law","https://ocw.mit.edu/courses/5-60-thermodynamics-kinetics-spring-2008/"]
-        ],
-        submods: ["Work, heat & internal energy","The First Law of thermodynamics","Enthalpy & heat capacity","Standard enthalpy changes & Hess's law","Adiabatic changes"]
-      },
-      {
-        id: "th-second", title: "The Second & Third Laws",
-        chap: [["Atkins (Phys. Chem.)","Focus 3"],["Levine","Ch. 3"],["Giancoli","Ch. 15"]],
-        vocab: ["Entropy","Spontaneity","Carnot cycle","Gibbs energy","Helmholtz energy","Third law","Clausius inequality"],
-        links: [
-          ["LibreTexts — Entropy & the Second Law","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"],
-          ["HyperPhysics — Entropy","http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/entrop.html"]
-        ],
-        submods: ["Entropy & the Second Law","The Carnot cycle & engine efficiency","The Clausius inequality","The Third Law of thermodynamics","Helmholtz & Gibbs energies"]
-      },
-      {
-        id: "th-phase", title: "Physical Transformations of Pure Substances",
-        chap: [["Atkins (Phys. Chem.)","Focus 4"],["Levine","Ch. 7"],["McQuarrie","Ch. 23"]],
-        vocab: ["Phase diagram","Chemical potential","Clausius-Clapeyron","Triple point","Critical point","Phase boundary"],
-        links: [
-          ["LibreTexts — Phase equilibria","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"],
-          ["Khan Academy — Phase diagrams","https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces"]
-        ],
-        submods: ["Phase diagrams of pure substances","Phase stability & chemical potential","The Clapeyron equation","The Clausius-Clapeyron equation","Triple & critical points"]
-      },
-      {
-        id: "th-mixtures", title: "Simple Mixtures & Solutions",
-        chap: [["Atkins (Phys. Chem.)","Focus 5"],["Levine","Ch. 9"],["McQuarrie","Ch. 24–25"]],
-        vocab: ["Partial molar quantity","Raoult's law","Henry's law","Activity","Colligative properties","Ideal solution"],
-        links: [
-          ["LibreTexts — Solutions & mixtures","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"],
-          ["MIT 5.60 — Solutions","https://ocw.mit.edu/courses/5-60-thermodynamics-kinetics-spring-2008/"]
-        ],
-        submods: ["Partial molar quantities","Thermodynamics of mixing","Ideal & ideal-dilute solutions (Raoult & Henry)","Colligative properties","Activities & real solutions"]
-      },
-      {
-        id: "th-chemeq", title: "Chemical Equilibrium (Thermodynamic)",
-        chap: [["Atkins (Phys. Chem.)","Focus 6"],["Levine","Ch. 6, 11"],["McQuarrie","Ch. 26"]],
-        vocab: ["Reaction Gibbs energy","Equilibrium constant","ΔG°","Van 't Hoff equation","Coupling","Standard state"],
-        links: [
-          ["LibreTexts — Chemical equilibrium thermodynamics","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"],
-          ["Khan Academy — Free energy & equilibrium","https://www.khanacademy.org/science/chemistry/thermodynamics-chemistry"]
-        ],
-        submods: ["Reaction Gibbs energy","The relation ΔG° = −RT ln K","Response of equilibrium to conditions","The van 't Hoff equation","Coupled reactions & biological energetics"]
-      },
-      {
-        id: "th-statmech", title: "Statistical Thermodynamics",
-        chap: [["Atkins (Phys. Chem.)","Focus 13"],["McQuarrie","Ch. 17–18"],["Levine","Ch. 21–22"]],
-        vocab: ["Partition function","Boltzmann distribution","Microstate","Ensemble","Configurational entropy","Equipartition"],
-        links: [
-          ["LibreTexts — Statistical mechanics","https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps"],
-          ["MIT 5.60 — Statistical mechanics","https://ocw.mit.edu/courses/5-60-thermodynamics-kinetics-spring-2008/"]
-        ],
-        submods: ["The Boltzmann distribution","The molecular partition function","Internal energy & entropy from partition functions","The canonical ensemble","Connecting statistical & classical thermodynamics"]
-      }
-    ]
-  },
-  {
-    id: "cp", name: "Competitive Programming", icon: "💻", color: "#8b5cf6",
-    source: "A2OJ Ladders (Codeforces) + core algorithm topics",
-    units: [
-      {
-        id: "cp-basics", title: "Foundations & I/O Speed",
-        chap: [["A2OJ","Ladder 4 — Div 2 A"],["CP Handbook","Ch. 1"],["USACO Guide","Bronze: Intro"]],
-        vocab: ["Time complexity","Big-O","STL","Fast I/O","Ad hoc","Implementation"],
-        links: [
-          ["USACO Guide — Getting started","https://usaco.guide/general/"],
-          ["Competitive Programmer's Handbook (PDF)","https://cses.fi/book/book.pdf"],
-          ["Codeforces — Problemset","https://codeforces.com/problemset"]
-        ],
-        submods: ["Language setup & fast I/O","Big-O & complexity analysis","STL containers (vector, map, set)","Ad hoc & implementation problems","A2OJ Ladder 4 (Div 2 A) — first 20 problems"]
-      },
-      {
-        id: "cp-math", title: "Number Theory & Math",
-        chap: [["A2OJ","Topic: Math / Number Theory"],["cp-algorithms","Algebra"],["CP Handbook","Ch. 21"]],
-        vocab: ["GCD/LCM","Modular arithmetic","Sieve of Eratosthenes","Modular inverse","Fermat's little theorem","Combinatorics"],
-        links: [
-          ["cp-algorithms — Algebra","https://cp-algorithms.com/algebra/binary-exp.html"],
-          ["USACO Guide — Math","https://usaco.guide/gold/divisibility"],
-          ["Codeforces — Number theory tag","https://codeforces.com/problemset?tags=number+theory"]
-        ],
-        submods: ["GCD, LCM & the Euclidean algorithm","Modular arithmetic & fast exponentiation","Sieve of Eratosthenes & primes","Modular inverse & Fermat's little theorem","Combinatorics & binomial coefficients"]
-      },
-      {
-        id: "cp-sorting", title: "Sorting, Searching & Two Pointers",
-        chap: [["A2OJ","Ladder 5 — Div 2 B"],["cp-algorithms","Sorting/Searching"],["USACO Guide","Silver"]],
-        vocab: ["Binary search","Two pointers","Sliding window","Prefix sums","Sort by key","Greedy"],
-        links: [
-          ["cp-algorithms — Binary search","https://cp-algorithms.com/num_methods/binary_search.html"],
-          ["USACO Guide — Binary search","https://usaco.guide/silver/binary-search"],
-          ["USACO Guide — Two pointers","https://usaco.guide/silver/two-pointers"]
-        ],
-        submods: ["Custom comparators & sorting","Binary search on arrays","Binary search on the answer","Two pointers & sliding window","Prefix sums & difference arrays"]
-      },
-      {
-        id: "cp-ds", title: "Data Structures",
-        chap: [["A2OJ","Ladder 6 — Div 2 C"],["cp-algorithms","Data Structures"],["USACO Guide","Gold"]],
-        vocab: ["Stack","Queue","Priority queue","Segment tree","Fenwick tree (BIT)","Disjoint set union","Sparse table"],
-        links: [
-          ["cp-algorithms — Data structures","https://cp-algorithms.com/data_structures/segment_tree.html"],
-          ["USACO Guide — Stacks & queues","https://usaco.guide/gold/stacks"],
-          ["USACO Guide — Disjoint set union","https://usaco.guide/gold/dsu"]
-        ],
-        submods: ["Stacks, queues & monotonic stacks","Priority queues & heaps","Disjoint Set Union (Union-Find)","Fenwick / Binary Indexed Tree","Segment trees (point & range)"]
-      },
-      {
-        id: "cp-graphs", title: "Graph Algorithms",
-        chap: [["A2OJ","Topic: Graphs"],["cp-algorithms","Graph"],["USACO Guide","Silver/Gold: Graphs"]],
-        vocab: ["BFS","DFS","Dijkstra","Topological sort","MST","Bellman-Ford","Floyd-Warshall","Connected components"],
-        links: [
-          ["cp-algorithms — Graph algorithms","https://cp-algorithms.com/graph/breadth-first-search.html"],
-          ["USACO Guide — Graph traversal","https://usaco.guide/silver/graph-traversal"],
-          ["USACO Guide — Shortest paths","https://usaco.guide/gold/shortest-paths"]
-        ],
-        submods: ["Graph representation","BFS & DFS","Connected components & flood fill","Topological sort","Shortest paths (Dijkstra, Bellman-Ford)","Minimum spanning tree (Kruskal, Prim)"]
-      },
-      {
-        id: "cp-dp", title: "Dynamic Programming",
-        chap: [["A2OJ","Ladder 7 — Div 2 D"],["cp-algorithms","Dynamic Programming"],["USACO Guide","Gold: DP"]],
-        vocab: ["Memoization","Tabulation","Knapsack","LIS","LCS","Bitmask DP","DP on trees","State transition"],
-        links: [
-          ["cp-algorithms — DP","https://cp-algorithms.com/dynamic_programming/intro-to-dp.html"],
-          ["USACO Guide — Intro to DP","https://usaco.guide/gold/intro-dp"],
-          ["AtCoder Educational DP Contest","https://atcoder.jp/contests/dp"]
-        ],
-        submods: ["1D DP & memoization vs tabulation","Knapsack variants","Longest increasing / common subsequence","DP on grids & intervals","Bitmask DP","DP on trees"]
-      },
-      {
-        id: "cp-strings", title: "String Algorithms",
-        chap: [["A2OJ","Topic: Strings"],["cp-algorithms","String Processing"],["CP Handbook","Ch. 26"]],
-        vocab: ["Hashing","KMP","Z-function","Trie","Suffix array","Prefix function","Rolling hash"],
-        links: [
-          ["cp-algorithms — String processing","https://cp-algorithms.com/string/prefix-function.html"],
-          ["USACO Guide — String hashing","https://usaco.guide/gold/string-hashing"],
-          ["Codeforces — Strings tag","https://codeforces.com/problemset?tags=strings"]
-        ],
-        submods: ["String hashing & rolling hash","Prefix function (KMP)","Z-function","Tries","Suffix arrays (intro)"]
-      },
-      {
-        id: "cp-ladder11", title: "Rating Ladder: Codeforces < 1300",
-        chap: [["A2OJ","Ladder 11 (100 problems)"],["USACO Guide","Bronze→Silver"]],
-        vocab: ["Greedy","Brute force","Constructive","Simulation","Sorting","Observation"],
-        links: [
-          ["A2OJ Ladder 11 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder11.html"],
-          ["Codeforces — Practice problemset","https://codeforces.com/problemset"]
-        ],
-        submods: ["Problems 1–20","Problems 21–40","Problems 41–60","Problems 61–80","Problems 81–100"]
-      },
-      {
-        id: "cp-ladder1399", title: "Rating Ladder: 1300–1399",
-        chap: [["A2OJ","Ladder 12 (100 problems)"],["USACO Guide","Silver"]],
-        vocab: ["Two pointers","Binary search","Greedy proof","Number theory","Prefix sums"],
-        links: [
-          ["A2OJ Ladder 12 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder12.html"],
-          ["Codeforces — Problemset by rating","https://codeforces.com/problemset?order=BY_RATING_ASC"]
-        ],
-        submods: ["Problems 1–20","Problems 21–40","Problems 41–60","Problems 61–80","Problems 81–100"]
-      },
-      {
-        id: "cp-ladder1599", title: "Rating Ladder: 1400–1599",
-        chap: [["A2OJ","Ladders 13–14 (200 problems)"],["USACO Guide","Gold"]],
-        vocab: ["DP","Graphs","Data structures","Bitmasking","Math heavy","Implementation heavy"],
-        links: [
-          ["A2OJ Ladder 13 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder13.html"],
-          ["A2OJ Ladder 14 (mirror)","https://earthshakira.github.io/a2oj-clientside/server/Ladder14.html"]
-        ],
-        submods: ["Ladder 13 — first half","Ladder 13 — second half","Ladder 14 — first half","Ladder 14 — second half","Editorial review & upsolving"]
-      }
-    ]
-  }
-];
-
-/* ---------- Spaced-repetition intervals (days) ---------- */
 const INTERVALS = [1, 3, 7, 16, 35];
 const DAY = 86400000;
-const SOON = 2 * DAY; // window for "due soon"
-
-/* ---------- State ---------- */
+const SOON = 2 * DAY;
 const LS_KEY = "lumen.state.v1";
 let state = loadState();
 
 function loadState() {
-  try {
-    const raw = localStorage.getItem(LS_KEY);
-    if (raw) return JSON.parse(raw);
-  } catch (e) { /* ignore */ }
+  try { const raw = localStorage.getItem(LS_KEY); if (raw) return JSON.parse(raw); } catch (e) {}
   return { completed: {}, reviews: {}, vocab: {}, settings: { theme: "light", notifications: false, lastNotified: 0 }, collapsed: {} };
 }
-function saveState() {
-  try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) { /* ignore */ }
-}
+function saveState() { try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {} }
 
-/* ---------- Lookup helpers ---------- */
-const UNIT_INDEX = {};
-const SUBJECT_OF_UNIT = {};
+const UNIT_INDEX = {}, SUBJECT_OF_UNIT = {};
 CURRICULUM.forEach(subj => subj.units.forEach(u => { UNIT_INDEX[u.id] = u; SUBJECT_OF_UNIT[u.id] = subj; }));
 
 function smKey(unitId, idx) { return unitId + "::" + idx; }
 function now() { return Date.now(); }
+function smTitle(unit, i) { const s = unit.submods[i]; return typeof s === "string" ? s : s.t; }
 
 function unitProgress(unit) {
-  const total = unit.submods.length;
-  let done = 0;
+  const total = unit.submods.length; let done = 0;
   for (let i = 0; i < total; i++) if (state.completed[smKey(unit.id, i)]) done++;
   return { done, total, pct: total ? Math.round((done / total) * 100) : 0 };
 }
@@ -828,193 +788,111 @@ function overallProgress() {
   return { done, total, pct: total ? Math.round((done / total) * 100) : 0 };
 }
 
-/* ---------- Spaced repetition logic ---------- */
-function scheduleReview(key) {
-  state.reviews[key] = { stage: 0, due: now() + INTERVALS[0] * DAY, last: now() };
-}
-function scheduleVocab(unitId) {
-  if (!state.vocab[unitId]) state.vocab[unitId] = { stage: 0, due: now() + INTERVALS[0] * DAY, last: now() };
-}
+function scheduleReview(key) { state.reviews[key] = { stage: 0, due: now() + INTERVALS[0] * DAY, last: now() }; }
+function scheduleVocab(unitId) { if (!state.vocab[unitId]) state.vocab[unitId] = { stage: 0, due: now() + INTERVALS[0] * DAY, last: now() }; }
 function advance(entry) {
-  // returns updated entry after a successful review
   const next = entry.stage + 1;
-  if (next >= INTERVALS.length) {
-    return { stage: next, due: null, last: now(), mastered: true };
-  }
+  if (next >= INTERVALS.length) return { stage: next, due: null, last: now(), mastered: true };
   return { stage: next, due: now() + INTERVALS[next] * DAY, last: now() };
 }
 function dueReviews() {
   const out = [];
   for (const key in state.reviews) {
     const r = state.reviews[key];
-    if (!state.completed[key]) continue; // only review things still completed
-    if (r.due == null) continue;
+    if (!state.completed[key] || r.due == null) continue;
     if (r.due <= now() + SOON) {
       const [unitId, idxStr] = key.split("::");
-      const unit = UNIT_INDEX[unitId];
-      if (!unit) continue;
-      out.push({ key, unit, subject: SUBJECT_OF_UNIT[unitId], label: unit.submods[+idxStr], entry: r, overdue: r.due <= now() });
+      const unit = UNIT_INDEX[unitId]; if (!unit) continue;
+      out.push({ key, unit, subject: SUBJECT_OF_UNIT[unitId], label: smTitle(unit, +idxStr), entry: r, overdue: r.due <= now() });
     }
   }
-  out.sort((a, b) => a.entry.due - b.entry.due);
-  return out;
+  out.sort((a, b) => a.entry.due - b.entry.due); return out;
 }
 function dueVocab() {
   const out = [];
   for (const unitId in state.vocab) {
-    const v = state.vocab[unitId];
-    if (v.due == null) continue;
+    const v = state.vocab[unitId]; if (v.due == null) continue;
     if (v.due <= now() + SOON) {
-      const unit = UNIT_INDEX[unitId];
-      if (!unit || !unit.vocab || !unit.vocab.length) continue;
+      const unit = UNIT_INDEX[unitId]; if (!unit || !unit.vocab || !unit.vocab.length) continue;
       out.push({ unitId, unit, subject: SUBJECT_OF_UNIT[unitId], entry: v, overdue: v.due <= now() });
     }
   }
-  out.sort((a, b) => a.entry.due - b.entry.due);
-  return out;
+  out.sort((a, b) => a.entry.due - b.entry.due); return out;
 }
 function totalDueCount() { return dueReviews().filter(r => r.overdue).length + dueVocab().filter(v => v.overdue).length; }
 
-/* ---------- Toggle submodule ---------- */
 function toggleSubmodule(unitId, idx) {
   const key = smKey(unitId, idx);
-  if (state.completed[key]) {
-    delete state.completed[key];
-    delete state.reviews[key];
-  } else {
-    state.completed[key] = true;
-    scheduleReview(key);
-    scheduleVocab(unitId);
-    onCompletion(unitId, idx);
-  }
+  if (state.completed[key]) { delete state.completed[key]; delete state.reviews[key]; }
+  else { state.completed[key] = true; scheduleReview(key); scheduleVocab(unitId); onCompletion(unitId, idx); }
   saveState();
 }
-
 function onCompletion(unitId, idx) {
   const unit = UNIT_INDEX[unitId];
-  toast("success", "Nice — checked off!", "“" + unit.submods[idx] + "” scheduled for review in 1 day.");
-  // Periodic reminder: surface what's due each time something is completed
-  const due = dueReviews().filter(r => r.overdue);
-  const vdue = dueVocab().filter(v => v.overdue);
-  const n = due.length + vdue.length;
-  if (n > 0) {
-    setTimeout(() => {
-      toast("", "🔁 " + n + " review" + (n > 1 ? "s" : "") + " due", "Open the Review Queue to refresh them and keep them in memory.");
-      maybeNotify();
-    }, 900);
-  }
+  toast("success", "Nice — checked off!", "“" + smTitle(unit, idx) + "” scheduled for review in 1 day.");
+  const n = dueReviews().filter(r => r.overdue).length + dueVocab().filter(v => v.overdue).length;
+  if (n > 0) setTimeout(() => { toast("", "🔁 " + n + " review" + (n > 1 ? "s" : "") + " due", "Open the Review Queue to refresh them and keep them in memory."); maybeNotify(); }, 900);
 }
-
-/* ---------- Mark reviews done ---------- */
 function markReviewDone(key) {
-  const r = state.reviews[key];
-  if (!r) return;
-  state.reviews[key] = advance(r);
-  saveState();
+  const r = state.reviews[key]; if (!r) return;
+  state.reviews[key] = advance(r); saveState();
   const r2 = state.reviews[key];
   if (r2.mastered) toast("success", "Mastered! 🎉", "You've cleared every review interval for this item.");
   else toast("success", "Reviewed", "Next checkpoint in " + INTERVALS[r2.stage] + " days.");
   render();
 }
-function markReviewLater(key) {
-  const r = state.reviews[key];
-  if (!r) return;
-  r.due = now() + DAY; // push one day
-  saveState(); render();
-}
+function markReviewLater(key) { const r = state.reviews[key]; if (!r) return; r.due = now() + DAY; saveState(); render(); }
 function markVocabDone(unitId) {
-  const v = state.vocab[unitId];
-  if (!v) return;
-  state.vocab[unitId] = advance(v);
-  saveState();
+  const v = state.vocab[unitId]; if (!v) return;
+  state.vocab[unitId] = advance(v); saveState();
   const v2 = state.vocab[unitId];
   if (v2.mastered) toast("success", "Vocabulary mastered ✨", "All review intervals cleared for these terms.");
   else toast("success", "Vocab refreshed", "These terms resurface in " + INTERVALS[v2.stage] + " days.");
   render();
 }
 
-/* ---------- Notifications ---------- */
 function maybeNotify() {
   if (!state.settings.notifications) return;
   if (typeof Notification === "undefined" || Notification.permission !== "granted") return;
-  if (now() - (state.settings.lastNotified || 0) < 60 * 60 * 1000) return; // at most hourly
-  const count = totalDueCount();
-  if (count <= 0) return;
-  try {
-    new Notification("Lumen — time to review", {
-      body: count + " item" + (count > 1 ? "s are" : " is") + " due. Open Lumen to refresh them.",
-      tag: "lumen-review"
-    });
-    state.settings.lastNotified = now();
-    saveState();
-  } catch (e) { /* ignore */ }
+  if (now() - (state.settings.lastNotified || 0) < 3600000) return;
+  const count = totalDueCount(); if (count <= 0) return;
+  try { new Notification("Lumen — time to review", { body: count + " item" + (count > 1 ? "s are" : " is") + " due. Open Lumen to refresh them.", tag: "lumen-review" }); state.settings.lastNotified = now(); saveState(); } catch (e) {}
 }
 async function toggleNotifications() {
   if (typeof Notification === "undefined") { toast("", "Not supported", "This browser doesn't support notifications."); return; }
-  if (state.settings.notifications) {
-    state.settings.notifications = false;
-    saveState(); renderNotifBtn();
-    toast("", "Reminders off", "Browser pop-up reminders disabled. Your Review Queue still works.");
-    return;
-  }
+  if (state.settings.notifications) { state.settings.notifications = false; saveState(); renderNotifBtn(); toast("", "Reminders off", "Browser pop-up reminders disabled. Your Review Queue still works."); return; }
   let perm = Notification.permission;
   if (perm !== "granted") perm = await Notification.requestPermission();
-  if (perm === "granted") {
-    state.settings.notifications = true; saveState(); renderNotifBtn();
-    toast("success", "Reminders on", "While this tab is open, Lumen will pop up when reviews are due.");
-    maybeNotify();
-  } else {
-    toast("", "Permission denied", "Allow notifications in your browser settings to enable reminders.");
-  }
+  if (perm === "granted") { state.settings.notifications = true; saveState(); renderNotifBtn(); toast("success", "Reminders on", "While this tab is open, Lumen will pop up when reviews are due."); maybeNotify(); }
+  else toast("", "Permission denied", "Allow notifications in your browser settings to enable reminders.");
 }
 
-/* ---------- Theme ---------- */
-function applyTheme() {
-  document.documentElement.setAttribute("data-theme", state.settings.theme);
-  document.getElementById("themeBtn").textContent = state.settings.theme === "dark" ? "☀️" : "🌙";
-}
-function toggleTheme() {
-  state.settings.theme = state.settings.theme === "dark" ? "light" : "dark";
-  saveState(); applyTheme();
-}
+function applyTheme() { document.documentElement.setAttribute("data-theme", state.settings.theme); document.getElementById("themeBtn").textContent = state.settings.theme === "dark" ? "☀️" : "🌙"; }
+function toggleTheme() { state.settings.theme = state.settings.theme === "dark" ? "light" : "dark"; saveState(); applyTheme(); }
 
-/* ---------- Toast ---------- */
 function toast(kind, title, body) {
   const t = document.createElement("div");
   t.className = "toast" + (kind ? " " + kind : "");
   t.innerHTML = '<div class="t-title"></div><div class="t-body"></div>';
-  t.querySelector(".t-title").textContent = title;
-  t.querySelector(".t-body").textContent = body;
+  t.querySelector(".t-title").textContent = title; t.querySelector(".t-body").textContent = body;
   document.getElementById("toaster").appendChild(t);
   setTimeout(() => { t.style.transition = "opacity .4s, transform .4s"; t.style.opacity = "0"; t.style.transform = "translateX(40px)"; setTimeout(() => t.remove(), 400); }, 4200);
 }
 
-/* ---------- Utilities ---------- */
 function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
-function progBar(pct, color) {
-  return '<div class="bar"><span style="width:' + pct + '%;background:' + (color || "var(--accent)") + '"></span></div>';
-}
+function progBar(pct, color) { return '<div class="bar"><span style="width:' + pct + '%;background:' + (color || "var(--accent)") + '"></span></div>'; }
 function relDue(ts) {
   if (ts == null) return "mastered";
   const diff = ts - now();
-  if (diff <= 0) {
-    const d = Math.ceil(-diff / DAY);
-    if (d <= 0) return "due now";
-    return "overdue " + d + "d";
-  }
-  const d = Math.ceil(diff / DAY);
-  if (d <= 1) return "due ≤ 1d";
-  return "in " + d + "d";
+  if (diff <= 0) { const d = Math.ceil(-diff / DAY); return d <= 0 ? "due now" : "overdue " + d + "d"; }
+  const d = Math.ceil(diff / DAY); return d <= 1 ? "due ≤ 1d" : "in " + d + "d";
 }
 function hostOf(url) { try { return new URL(url).hostname.replace(/^www\./, ""); } catch (e) { return ""; } }
 
-/* ---------- Router / render ---------- */
 let activeTab = "dashboard";
 function setTab(tab) { activeTab = tab; document.querySelectorAll("nav.tabs button").forEach(b => b.classList.toggle("active", b.dataset.tab === tab)); render(); }
-
 function render() {
-  renderBadges();
-  renderNotifBtn();
+  renderBadges(); renderNotifBtn();
   const main = document.getElementById("main");
   if (activeTab === "dashboard") main.innerHTML = viewDashboard();
   else if (activeTab === "subjects") main.innerHTML = viewSubjects();
@@ -1022,276 +900,163 @@ function render() {
   else if (activeTab === "about") main.innerHTML = viewAbout();
   wire();
 }
+function renderBadges() { const c = totalDueCount(), badge = document.getElementById("reviewBadge"); if (c > 0) { badge.style.display = ""; badge.textContent = c; } else badge.style.display = "none"; }
+function renderNotifBtn() { const btn = document.getElementById("notifBtn"), on = state.settings.notifications; btn.classList.toggle("on", on); document.getElementById("notifLabel").textContent = on ? "Reminders on" : "Reminders"; document.getElementById("notifIcon").textContent = on ? "🔔" : "🔕"; }
 
-function renderBadges() {
-  const c = totalDueCount();
-  const badge = document.getElementById("reviewBadge");
-  if (c > 0) { badge.style.display = ""; badge.textContent = c; } else badge.style.display = "none";
-}
-function renderNotifBtn() {
-  const btn = document.getElementById("notifBtn");
-  const on = state.settings.notifications;
-  btn.classList.toggle("on", on);
-  document.getElementById("notifLabel").textContent = on ? "Reminders on" : "Reminders";
-  document.getElementById("notifIcon").textContent = on ? "🔔" : "🔕";
-}
-
-/* ---------- Dashboard ---------- */
 function viewDashboard() {
-  const o = overallProgress();
-  const dr = dueReviews(), dv = dueVocab();
+  const o = overallProgress(), dr = dueReviews(), dv = dueVocab();
   const dueNow = dr.filter(r => r.overdue).length + dv.filter(v => v.overdue).length;
   let unitsStarted = 0, unitsTotal = 0;
   CURRICULUM.forEach(s => s.units.forEach(u => { unitsTotal++; if (unitProgress(u).done > 0) unitsStarted++; }));
-
-  let html = '<div class="view">';
-  html += '<h1 class="page">Your learning dashboard</h1>';
+  let html = '<div class="view"><h1 class="page">Your learning dashboard</h1>';
   html += '<p class="page-sub">Check things off as you learn them — Lumen schedules spaced reviews so they stick.</p>';
-
   html += '<div class="stat-grid">';
   html += stat(o.pct + "%", "Overall complete", "accent");
   html += stat(o.done + "/" + o.total, "Submodules done", "");
   html += stat(unitsStarted + "/" + unitsTotal, "Units in progress", "green");
   html += stat(dueNow, "Reviews due now", dueNow > 0 ? "amber" : "");
-  html += '</div>';
-
-  html += '<div class="section-title">Subjects</div>';
-  html += '<div class="subj-grid">';
+  html += '</div><div class="section-title">Subjects</div><div class="subj-grid">';
   CURRICULUM.forEach(s => {
     const p = subjectProgress(s);
-    html += '<div class="card subj-card" data-goto-subject="' + s.id + '">';
-    html += '<div class="top"><span class="subj-dot" style="background:' + s.color + '"></span><h3>' + s.icon + " " + esc(s.name) + '</h3></div>';
+    html += '<div class="card subj-card" data-goto-subject="' + s.id + '"><div class="top"><span class="subj-dot" style="background:' + s.color + '"></span><h3>' + s.icon + " " + esc(s.name) + '</h3></div>';
     html += '<div class="src">' + esc(s.source) + '</div>';
-    html += '<div class="meta"><span>' + s.units.length + ' units · <b>' + p.done + '</b>/' + p.total + ' submodules</span><b>' + p.pct + '%</b></div>';
-    html += progBar(p.pct, s.color);
-    html += '</div>';
+    html += '<div class="meta"><span>' + s.units.length + ' units · <b>' + p.done + '</b>/' + p.total + ' submodules</span><b>' + p.pct + '%</b></div>' + progBar(p.pct, s.color) + '</div>';
   });
-  html += '</div>';
-
-  // Due preview
-  html += '<div class="section-title">Up next for review</div>';
-  if (dr.length === 0 && dv.length === 0) {
-    html += '<div class="card empty"><div class="big">🌱</div><p><b>Nothing scheduled yet.</b></p><p>Complete a submodule in <b>Subjects</b> and it’ll appear here on a spaced schedule.</p></div>';
-  } else {
+  html += '</div><div class="section-title">Up next for review</div>';
+  if (dr.length === 0 && dv.length === 0) html += '<div class="card empty"><div class="big">🌱</div><p><b>Nothing scheduled yet.</b></p><p>Complete a submodule in <b>Subjects</b> and it’ll appear here on a spaced schedule.</p></div>';
+  else {
     html += '<div class="review-col">';
     dr.slice(0, 4).forEach(r => html += reviewItemHTML(r));
     if (dv.length) html += vocabPreviewHTML(dv[0]);
     html += '</div>';
     if (dr.length + dv.length > 5) html += '<p class="page-sub" style="margin-top:14px">…and more in the <a href="#" data-goto-tab="review">Review Queue</a>.</p>';
   }
-  html += '</div>';
-  return html;
+  return html + '</div>';
 }
-function stat(num, lbl, cls) {
-  return '<div class="card stat"><div class="num ' + (cls || "") + '">' + num + '</div><div class="lbl">' + lbl + '</div></div>';
-}
+function stat(num, lbl, cls) { return '<div class="card stat"><div class="num ' + (cls || "") + '">' + num + '</div><div class="lbl">' + lbl + '</div></div>'; }
 
-/* ---------- Subjects view ---------- */
 function viewSubjects() {
-  let html = '<div class="view">';
-  html += '<h1 class="page">Subjects & units</h1>';
-  html += '<p class="page-sub">Expand a unit to see its submodules, multi-textbook chapter map, key vocabulary, and curated links.</p>';
+  let html = '<div class="view"><h1 class="page">Subjects & units</h1>';
+  html += '<p class="page-sub">Each submodule maps to a real textbook section and carries its own curated further-reading links. Expand a unit to explore.</p>';
   CURRICULUM.forEach(s => {
     const p = subjectProgress(s);
     const collapsed = state.collapsed["subj:" + s.id] ? " collapsed" : "";
-    html += '<div class="card subject-block' + collapsed + '" data-subject="' + s.id + '">';
-    html += '<div class="subject-head" data-toggle-subject="' + s.id + '">';
-    html += '<span class="subj-dot" style="background:' + s.color + '"></span>';
-    html += '<div><h2>' + s.icon + " " + esc(s.name) + '</h2><div class="src">' + esc(s.source) + '</div></div>';
-    html += '<div class="minibar" style="margin-left:auto">' + progBar(p.pct, s.color) + '</div>';
-    html += '<span class="pct">' + p.pct + '%</span>';
-    html += '<span class="chev">▼</span>';
-    html += '</div>';
-    html += '<div class="units">';
+    html += '<div class="card subject-block' + collapsed + '" data-subject="' + s.id + '"><div class="subject-head" data-toggle-subject="' + s.id + '">';
+    html += '<span class="subj-dot" style="background:' + s.color + '"></span><div><h2>' + s.icon + " " + esc(s.name) + '</h2><div class="src">' + esc(s.source) + '</div></div>';
+    html += '<div class="minibar" style="margin-left:auto">' + progBar(p.pct, s.color) + '</div><span class="pct">' + p.pct + '%</span><span class="chev">▼</span></div><div class="units">';
     s.units.forEach(u => html += unitHTML(s, u));
     html += '</div></div>';
   });
-  html += '</div>';
-  return html;
+  return html + '</div>';
+}
+function smLinksHTML(links) {
+  if (!links || !links.length) return "";
+  let h = '<div class="sm-links">';
+  links.forEach(l => h += '<a href="' + esc(l[1]) + '" target="_blank" rel="noopener noreferrer">↗ ' + esc(l[0]) + ' <span class="ext">' + esc(hostOf(l[1])) + '</span></a>');
+  return h + '</div>';
 }
 function unitHTML(subj, unit) {
   const p = unitProgress(unit);
   const open = state.collapsed["unit:" + unit.id] === false ? " open" : (state.openUnit === unit.id ? " open" : "");
-  let html = '<div class="unit' + open + '" data-unit="' + unit.id + '">';
-  html += '<div class="unit-head" data-toggle-unit="' + unit.id + '">';
-  html += '<span class="chev">▶</span>';
+  let html = '<div class="unit' + open + '" data-unit="' + unit.id + '"><div class="unit-head" data-toggle-unit="' + unit.id + '"><span class="chev">▶</span>';
   html += '<div><div class="u-title">' + esc(unit.title) + '</div><div class="u-chap">' + unit.chap.map(c => esc(c[0]) + " " + esc(c[1])).join(" · ") + '</div></div>';
-  html += '<div class="u-prog"><span class="minibar">' + progBar(p.pct, subj.color) + '</span><span class="u-count">' + p.done + '/' + p.total + '</span></div>';
-  html += '</div>';
-  html += '<div class="unit-body">';
-  // submodules
+  html += '<div class="u-prog"><span class="minibar">' + progBar(p.pct, subj.color) + '</span><span class="u-count">' + p.done + '/' + p.total + '</span></div></div><div class="unit-body">';
   unit.submods.forEach((sm, i) => {
-    const key = smKey(unit.id, i);
-    const checked = state.completed[key] ? "checked" : "";
-    html += '<div class="submod"><label><input type="checkbox" ' + checked + ' data-toggle-sm="' + unit.id + '|' + i + '"><span class="checkbox">✓</span><span class="sm-text">' + esc(sm) + '</span></label></div>';
+    const o = typeof sm === "string" ? { t: sm } : sm;
+    const key = smKey(unit.id, i), checked = state.completed[key] ? "checked" : "";
+    html += '<div class="submod"><div class="submod-row"><label><input type="checkbox" ' + checked + ' data-toggle-sm="' + unit.id + '|' + i + '"><span class="checkbox">✓</span><span class="sm-text">' + esc(o.t) + '</span></label>';
+    if (o.sec) html += '<span class="sec-tag">' + esc(o.sec) + '</span>';
+    html += '</div>' + smLinksHTML(o.links) + '</div>';
   });
-  // meta
-  html += '<div class="unit-meta">';
-  html += '<div class="meta-box"><h4>📚 Maps to chapters across textbooks</h4><div class="book-list">';
+  html += '<div class="unit-meta"><div class="meta-box"><h4>📚 Cross-textbook chapter map</h4><div class="book-list">';
   unit.chap.forEach(c => html += '<span class="book-chip"><b>' + esc(c[0]) + '</b> <span>' + esc(c[1]) + '</span></span>');
-  html += '</div></div>';
-  html += '<div class="meta-box"><h4>🔑 Key vocabulary (resurfaced on a schedule)</h4><div class="vocab-list">';
+  html += '</div></div><div class="meta-box"><h4>🔑 Key vocabulary (resurfaced on a schedule)</h4><div class="vocab-list">';
   unit.vocab.forEach(v => html += '<span class="vocab-pill">' + esc(v) + '</span>');
   html += '</div></div>';
-  html += '<div class="meta-box"><h4>🔗 Further learning</h4><div class="link-list">';
-  unit.links.forEach(l => html += '<a href="' + esc(l[1]) + '" target="_blank" rel="noopener noreferrer">↗ ' + esc(l[0]) + ' <span class="ext">' + esc(hostOf(l[1])) + '</span></a>');
-  html += '</div></div>';
-  html += '</div></div></div>';
-  return html;
+  if (unit.links && unit.links.length) {
+    html += '<div class="meta-box"><h4>🔗 Unit overview & broader resources</h4><div class="link-list">';
+    unit.links.forEach(l => html += '<a href="' + esc(l[1]) + '" target="_blank" rel="noopener noreferrer">↗ ' + esc(l[0]) + ' <span class="ext">' + esc(hostOf(l[1])) + '</span></a>');
+    html += '</div></div>';
+  }
+  return html + '</div></div>';
 }
 
-/* ---------- Review view ---------- */
 function viewReview() {
   const dr = dueReviews(), dv = dueVocab();
-  let html = '<div class="view">';
-  html += '<h1 class="page">Review queue</h1>';
+  let html = '<div class="view"><h1 class="page">Review queue</h1>';
   html += '<p class="page-sub">Spaced repetition at ' + INTERVALS.join(", ") + '-day intervals. Refresh each item to lock it in and reschedule the next checkpoint.</p>';
-
   html += '<div class="section-title">Concepts to review' + (dr.length ? " (" + dr.length + ")" : "") + '</div>';
-  if (dr.length === 0) {
-    html += '<div class="card empty"><div class="big">✅</div><p><b>No concept reviews due.</b></p><p>You’re all caught up. New reviews appear as your scheduled checkpoints arrive.</p></div>';
-  } else {
-    html += '<div class="review-col">';
-    dr.forEach(r => html += reviewItemHTML(r, true));
-    html += '</div>';
-  }
-
+  if (dr.length === 0) html += '<div class="card empty"><div class="big">✅</div><p><b>No concept reviews due.</b></p><p>You’re all caught up. New reviews appear as your scheduled checkpoints arrive.</p></div>';
+  else { html += '<div class="review-col">'; dr.forEach(r => html += reviewItemHTML(r, true)); html += '</div>'; }
   html += '<div class="section-title">Vocabulary to refresh' + (dv.length ? " (" + dv.length + ")" : "") + '</div>';
-  if (dv.length === 0) {
-    html += '<div class="card empty"><div class="big">🔤</div><p><b>No vocabulary due.</b></p><p>Key terms from your started units resurface here on a spaced schedule.</p></div>';
-  } else {
-    html += '<div class="review-col">';
-    dv.forEach(v => html += vocabReviewHTML(v));
-    html += '</div>';
-  }
-  html += '</div>';
-  return html;
+  if (dv.length === 0) html += '<div class="card empty"><div class="big">🔤</div><p><b>No vocabulary due.</b></p><p>Key terms from your started units resurface here on a spaced schedule.</p></div>';
+  else { html += '<div class="review-col">'; dv.forEach(v => html += vocabReviewHTML(v)); html += '</div>'; }
+  return html + '</div>';
 }
 function reviewItemHTML(r, withActions) {
   const cls = r.overdue ? "due-now" : "due-soon";
-  let html = '<div class="card review-item">';
-  html += '<div class="ri-icon" style="background:' + r.subject.color + '22;color:' + r.subject.color + '">' + r.subject.icon + '</div>';
+  let html = '<div class="card review-item"><div class="ri-icon" style="background:' + r.subject.color + '22;color:' + r.subject.color + '">' + r.subject.icon + '</div>';
   html += '<div class="ri-main"><div class="ri-title">' + esc(r.label) + '</div><div class="ri-sub">' + esc(r.subject.name) + ' · ' + esc(r.unit.title) + ' · stage ' + (r.entry.stage + 1) + '/' + INTERVALS.length + '</div></div>';
   html += '<span class="ri-due ' + cls + '">' + relDue(r.entry.due) + '</span>';
-  if (withActions) {
-    html += '<button class="btn primary" data-review-done="' + esc(r.key) + '">Reviewed ✓</button>';
-    html += '<button class="btn" data-review-later="' + esc(r.key) + '">Later</button>';
-  }
-  html += '</div>';
-  return html;
+  if (withActions) html += '<button class="btn primary" data-review-done="' + esc(r.key) + '">Reviewed ✓</button><button class="btn" data-review-later="' + esc(r.key) + '">Later</button>';
+  return html + '</div>';
 }
 function vocabPreviewHTML(v) {
   return '<div class="card review-item"><div class="ri-icon" style="background:' + v.subject.color + '22;color:' + v.subject.color + '">🔤</div><div class="ri-main"><div class="ri-title">Vocabulary: ' + esc(v.unit.title) + '</div><div class="ri-sub">' + esc(v.subject.name) + ' · ' + v.unit.vocab.length + ' terms</div></div><span class="ri-due ' + (v.overdue ? "due-now" : "due-soon") + '">' + relDue(v.entry.due) + '</span></div>';
 }
 function vocabReviewHTML(v) {
-  let html = '<div class="card vocab-review-card">';
-  html += '<div class="vr-head"><div class="ri-icon" style="background:' + v.subject.color + '22;color:' + v.subject.color + '">🔤</div>';
+  let html = '<div class="card vocab-review-card"><div class="vr-head"><div class="ri-icon" style="background:' + v.subject.color + '22;color:' + v.subject.color + '">🔤</div>';
   html += '<div class="ri-main"><div class="ri-title">' + esc(v.unit.title) + ' — key terms</div><div class="ri-sub">' + esc(v.subject.name) + ' · stage ' + (v.entry.stage + 1) + '/' + INTERVALS.length + '</div></div>';
-  html += '<span class="ri-due ' + (v.overdue ? "due-now" : "due-soon") + '">' + relDue(v.entry.due) + '</span></div>';
-  html += '<div class="terms">';
+  html += '<span class="ri-due ' + (v.overdue ? "due-now" : "due-soon") + '">' + relDue(v.entry.due) + '</span></div><div class="terms">';
   v.unit.vocab.forEach(t => html += '<span class="vocab-pill">' + esc(t) + '</span>');
-  html += '</div>';
-  html += '<div style="display:flex;gap:8px"><button class="btn primary" data-vocab-done="' + v.unitId + '">I remember these ✓</button><a class="btn" href="#" data-vocab-study="' + v.unitId + '">Study in unit ↗</a></div>';
-  html += '</div>';
+  html += '</div><div style="display:flex;gap:8px"><button class="btn primary" data-vocab-done="' + v.unitId + '">I remember these ✓</button><a class="btn" href="#" data-vocab-study="' + v.unitId + '">Study in unit ↗</a></div></div>';
   return html;
 }
 
-/* ---------- About view ---------- */
 function viewAbout() {
-  let html = '<div class="view prose">';
-  html += '<h1 class="page">How Lumen works</h1>';
+  let html = '<div class="view prose"><h1 class="page">How Lumen works</h1>';
   html += '<p class="page-sub">A clean, offline-first tracker for long-term retention across physics, chemistry, thermodynamics, and competitive programming.</p>';
-
-  html += '<h2>1 · Track what you learn</h2>';
-  html += '<p>Everything is organized <b>Subjects → Units → Submodules</b>. Each submodule is a checkbox — tick it the moment you’ve learned that piece. Progress bars roll up per unit and per subject so you always see how far you’ve come.</p>';
-  html += '<p>The curriculum is seeded from real, reputable structure: <b>Giancoli’s <i>Physics: Principles with Applications</i></b>, <b>Atkins’ <i>Physical Chemistry</i></b> and <b><i>Chemical Principles</i></b>, and the <b>A2OJ Codeforces ladders</b> plus core algorithm topics. Every unit also maps to the matching chapters in alternative textbooks (Halliday/Resnick, Serway, Oxtoby, Levine, McQuarrie, the Competitive Programmer’s Handbook…).</p>';
-
-  html += '<h2>2 · Reviews come back on a spaced schedule</h2>';
-  html += '<p>The moment you check something off, Lumen schedules review checkpoints at expanding intervals:</p>';
+  html += '<h2>1 · Track what you learn</h2><p>Everything is organized <b>Subjects → Units → Submodules</b>. Each submodule is a checkbox — and now each one is mapped to a specific <b>textbook section</b> (e.g. <i>Giancoli §2-5</i> or <i>Atkins Topic 2B</i>) and carries its own set of <b>curated further-reading links</b> for that exact topic. Progress bars roll up per unit and per subject.</p>';
+  html += '<p>The curriculum is seeded from real structure: <b>Giancoli’s <i>Physics: Principles with Applications</i></b> (numbered sections), <b>Atkins’ <i>Physical Chemistry</i></b> (Focuses & Topics) and <b>Atkins & Jones <i>Chemical Principles</i></b>, and the <b>A2OJ Codeforces ladders</b> plus core algorithm topics. Each unit also cross-maps to alternative textbooks (Halliday/Resnick, Serway, Oxtoby, Levine, McQuarrie…).</p>';
+  html += '<h2>2 · Reviews come back on a spaced schedule</h2><p>The moment you check something off, Lumen schedules review checkpoints at expanding intervals:</p>';
   html += '<div class="interval-pills">' + INTERVALS.map(d => '<div class="ip">' + d + '<small>day' + (d > 1 ? "s" : "") + '</small></div>').join("") + '</div>';
-  html += '<p>When a checkpoint arrives the item shows up in the <b>Review Queue</b>. Hit <b>Reviewed ✓</b> and it jumps to the next, longer interval — the spacing effect that moves knowledge into long-term memory. Clear all five and the item is <b>mastered</b>.</p>';
-
-  html += '<h2>3 · Vocabulary refresh</h2>';
-  html += '<p>Each unit carries a small set of key terms. Once you start a unit, its vocabulary enters the same spaced schedule and resurfaces in the Review Queue under <b>Vocabulary to refresh</b> so the language of each field stays sharp.</p>';
-
-  html += '<h2>4 · Reminders</h2>';
-  html += '<p>Every time you complete something, Lumen nudges you about anything already due. Turn on <b>Reminders</b> (top-right) to also get browser pop-up notifications when reviews are waiting — while this tab is open, capped to at most once an hour so it never gets annoying. The in-app Review Queue is always the source of truth.</p>';
-
-  html += '<h2>Privacy & data</h2>';
-  html += '<p>Everything lives in your browser’s <b>localStorage</b> — no account, no server, no tracking. It stays on this device and browser. The only network requests are for a web font and the external learning links you choose to open.</p>';
-  html += '<p style="margin-top:18px"><button class="danger-link" id="resetBtn">Reset all progress</button></p>';
-  html += '</div>';
+  html += '<p>When a checkpoint arrives the item shows up in the <b>Review Queue</b>. Hit <b>Reviewed ✓</b> and it jumps to the next, longer interval. Clear all five and the item is <b>mastered</b>.</p>';
+  html += '<h2>3 · Vocabulary refresh</h2><p>Each unit carries key terms. Once you start a unit, its vocabulary enters the same spaced schedule and resurfaces under <b>Vocabulary to refresh</b>.</p>';
+  html += '<h2>4 · Reminders</h2><p>Every completion nudges you about anything due. Turn on <b>Reminders</b> (top-right) for browser pop-up notifications while the tab is open — capped to once an hour so it never gets annoying.</p>';
+  html += '<h2>Privacy & data</h2><p>Everything lives in your browser’s <b>localStorage</b> — no account, no server, no tracking. The only network requests are for a web font and the external learning links you choose to open.</p>';
+  html += '<p style="margin-top:18px"><button class="danger-link" id="resetBtn">Reset all progress</button></p></div>';
   return html;
 }
 
-/* ---------- Wire up events ---------- */
 function wire() {
-  document.querySelectorAll("[data-toggle-sm]").forEach(el => {
-    el.addEventListener("change", () => {
-      const [uid, idx] = el.dataset.toggleSm.split("|");
-      toggleSubmodule(uid, +idx);
-      render();
-    });
-  });
-  document.querySelectorAll("[data-toggle-unit]").forEach(el => {
-    el.addEventListener("click", () => {
-      const id = el.dataset.toggleUnit;
-      const unitEl = el.closest(".unit");
-      const willOpen = !unitEl.classList.contains("open");
-      state.collapsed["unit:" + id] = willOpen ? false : true;
-      if (state.openUnit === id && !willOpen) state.openUnit = null;
-      unitEl.classList.toggle("open");
-    });
-  });
-  document.querySelectorAll("[data-toggle-subject]").forEach(el => {
-    el.addEventListener("click", () => {
-      const id = el.dataset.toggleSubject;
-      const block = el.closest(".subject-block");
-      block.classList.toggle("collapsed");
-      state.collapsed["subj:" + id] = block.classList.contains("collapsed");
-      saveState();
-    });
-  });
-  document.querySelectorAll("[data-goto-subject]").forEach(el => {
-    el.addEventListener("click", () => { state.openSubject = el.dataset.gotoSubject; setTab("subjects"); setTimeout(() => scrollToSubject(el.dataset.gotoSubject), 60); });
-  });
-  document.querySelectorAll("[data-goto-tab]").forEach(el => {
-    el.addEventListener("click", e => { e.preventDefault(); setTab(el.dataset.gotoTab); });
-  });
+  document.querySelectorAll("[data-toggle-sm]").forEach(el => el.addEventListener("change", () => { const [uid, idx] = el.dataset.toggleSm.split("|"); toggleSubmodule(uid, +idx); render(); }));
+  document.querySelectorAll("[data-toggle-unit]").forEach(el => el.addEventListener("click", e => {
+    if (e.target.closest("a")) return;
+    const id = el.dataset.toggleUnit, unitEl = el.closest(".unit"), willOpen = !unitEl.classList.contains("open");
+    state.collapsed["unit:" + id] = willOpen ? false : true; if (state.openUnit === id && !willOpen) state.openUnit = null; unitEl.classList.toggle("open");
+  }));
+  document.querySelectorAll("[data-toggle-subject]").forEach(el => el.addEventListener("click", () => { const id = el.dataset.toggleSubject, block = el.closest(".subject-block"); block.classList.toggle("collapsed"); state.collapsed["subj:" + id] = block.classList.contains("collapsed"); saveState(); }));
+  document.querySelectorAll("[data-goto-subject]").forEach(el => el.addEventListener("click", () => { state.openSubject = el.dataset.gotoSubject; setTab("subjects"); setTimeout(() => scrollToSubject(el.dataset.gotoSubject), 60); }));
+  document.querySelectorAll("[data-goto-tab]").forEach(el => el.addEventListener("click", e => { e.preventDefault(); setTab(el.dataset.gotoTab); }));
   document.querySelectorAll("[data-review-done]").forEach(el => el.addEventListener("click", () => markReviewDone(el.dataset.reviewDone)));
   document.querySelectorAll("[data-review-later]").forEach(el => el.addEventListener("click", () => markReviewLater(el.dataset.reviewLater)));
   document.querySelectorAll("[data-vocab-done]").forEach(el => el.addEventListener("click", () => markVocabDone(el.dataset.vocabDone)));
   document.querySelectorAll("[data-vocab-study]").forEach(el => el.addEventListener("click", e => {
-    e.preventDefault();
-    const uid = el.dataset.vocabStudy;
-    state.openUnit = uid; state.collapsed["unit:" + uid] = false;
-    state.collapsed["subj:" + SUBJECT_OF_UNIT[uid].id] = false;
-    setTab("subjects");
-    setTimeout(() => { const u = document.querySelector('[data-unit="' + uid + '"]'); if (u) u.scrollIntoView({ behavior: "smooth", block: "center" }); }, 80);
+    e.preventDefault(); const uid = el.dataset.vocabStudy;
+    state.openUnit = uid; state.collapsed["unit:" + uid] = false; state.collapsed["subj:" + SUBJECT_OF_UNIT[uid].id] = false;
+    setTab("subjects"); setTimeout(() => { const u = document.querySelector('[data-unit="' + uid + '"]'); if (u) u.scrollIntoView({ behavior: "smooth", block: "center" }); }, 80);
   }));
   const reset = document.getElementById("resetBtn");
-  if (reset) reset.addEventListener("click", () => {
-    if (confirm("Reset ALL progress, reviews, and vocabulary schedules? This cannot be undone.")) {
-      state = { completed: {}, reviews: {}, vocab: {}, settings: state.settings, collapsed: {} };
-      saveState(); toast("", "Progress reset", "Everything has been cleared."); render();
-    }
-  });
+  if (reset) reset.addEventListener("click", () => { if (confirm("Reset ALL progress, reviews, and vocabulary schedules? This cannot be undone.")) { state = { completed: {}, reviews: {}, vocab: {}, settings: state.settings, collapsed: {} }; saveState(); toast("", "Progress reset", "Everything has been cleared."); render(); } });
 }
-function scrollToSubject(id) {
-  state.collapsed["subj:" + id] = false; saveState();
-  const el = document.querySelector('[data-subject="' + id + '"]');
-  if (el) { el.classList.remove("collapsed"); el.scrollIntoView({ behavior: "smooth", block: "start" }); }
-}
+function scrollToSubject(id) { state.collapsed["subj:" + id] = false; saveState(); const el = document.querySelector('[data-subject="' + id + '"]'); if (el) { el.classList.remove("collapsed"); el.scrollIntoView({ behavior: "smooth", block: "start" }); } }
 
-/* ---------- Boot ---------- */
 applyTheme();
 document.getElementById("themeBtn").addEventListener("click", toggleTheme);
 document.getElementById("notifBtn").addEventListener("click", toggleNotifications);
 document.querySelectorAll("nav.tabs button").forEach(b => b.addEventListener("click", () => setTab(b.dataset.tab)));
 render();
-
-// Periodically re-check for due reviews while the tab is open (keeps badge & notifications fresh)
-setInterval(() => { renderBadges(); maybeNotify(); if (activeTab === "review" || activeTab === "dashboard") render(); }, 60 * 1000);
+setInterval(() => { renderBadges(); maybeNotify(); if (activeTab === "review" || activeTab === "dashboard") render(); }, 60000);
 </script>
 </body>
 </html>
